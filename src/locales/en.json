@@ -1,0 +1,10 @@
+{
+  "home": {
+    "test": "Hey! Current language is english!"
+  },
+  "meta": {
+    "fullTitle": "exteraGram – next generation telegram client",
+    "title": "exteraGram",
+    "description": "Next generation Telegram client for Android, made by exteraSquad."
+  }
+}
