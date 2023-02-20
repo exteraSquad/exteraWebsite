@@ -7,8 +7,8 @@ module.exports = {
     ],
     theme: {
         fontFamily: {
-            sans: ["var(--font-onest)", ...fontFamily.sans],
-            display: ["var(--font-cal-sans)", ...fontFamily.sans],
+            sans: ["var(--font-sans)", ...fontFamily.sans],
+            display: ["var(--font-display)", ...fontFamily.sans],
         },
         extend: {
             colors: {

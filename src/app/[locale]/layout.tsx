@@ -9,6 +9,7 @@ import {localeConfig} from "@/i18n";
 const calSans = localFont({
     src: '../fonts/CalSans-SemiBold.woff2',
     variable: '--font-cal-sans',
+    display: "swap"
 })
 const onest = localFont({
     src: [
@@ -20,8 +21,13 @@ const onest = localFont({
             path: '../fonts/Onest-Medium.woff',
             weight: '500',
         },
+        {
+            path: '../fonts/Onest-Bold.woff',
+            weight: '700'
+        }
     ],
     variable: '--font-onest',
+    display: "swap"
 })
 
 type RootLayoutProps = {
@@ -39,7 +45,10 @@ export default function RootLayout(
     return (
         <html lang={locale}>
         <head/>
-        <body className={`${onest.variable} ${calSans.variable} font-sans`}>{children}</body>
+        <body className={`${onest.variable} ${calSans.variable} font-sans`} style={{
+            '--font-sans': 'var(--font-onest)',
+            '--font-display': locale == 'ru' ? 'var(--font-onest)' : 'var(--font-cal-sans)',
+        } as any}>{children}</body>
         </html>
     )
 }
