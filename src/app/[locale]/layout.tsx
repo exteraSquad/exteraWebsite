@@ -66,6 +66,7 @@ export async function generateMetadata() {
         description: t('description'),
         generator: "Next.js",
         colorScheme: "light",
+        themeColor: "#F54142",
         openGraph: {
             type: "website",
             locale: locale,
