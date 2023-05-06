@@ -142,7 +142,7 @@ export default function Home() {
                 </figure>
             </section>
 
-            <div className="overflow-hidden w-full my-16 flex flex-col justify-center h-[48rem] word-spacing-6 text-9xl font-bold font-display">
+            <div className="overflow-hidden w-full my-8 md:my-16 flex flex-col justify-center h-96 sm:h-[32rem] md:h-[48rem] word-spacing-6 text-6xl sm:text-8xl md:text-9xl font-bold font-display">
                 <Marquee rotation={8} className="text-neutral-300" enableScrollBoost>
                     Handy Beautiful Open Fast Modern
                 </Marquee>
