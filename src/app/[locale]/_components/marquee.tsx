@@ -1,14 +1,19 @@
 "use client";
 
-import {PropsWithChildren, useEffect, useRef} from "react";
+import {useEffect, useRef} from "react";
 
-export type MarqueeProps = PropsWithChildren<{
+export type MarqueeProps = {
+    children: string,
     baseVelocity?: number,
     rotation?: number,
-    className?: string
-}>
+    className?: string,
+    repeatCount?: number,
+    enableScrollBoost?: boolean
+}
 
-export default function Marquee({children, baseVelocity = 1, rotation = 0, className}: MarqueeProps) {
+export default function Marquee(
+    {children, baseVelocity = 1, rotation = 0, repeatCount = 1, enableScrollBoost = false, className}: MarqueeProps
+) {
     const previousPageScroll = useRef(0);
     const marqueeScroll = useRef(0);
     const marquee = useRef<HTMLDivElement>(null);
@@ -22,7 +27,7 @@ export default function Marquee({children, baseVelocity = 1, rotation = 0, class
                 const pageScrollDelta = pageScroll - previousPageScroll.current;
                 previousPageScroll.current = pageScroll;
 
-                marqueeScroll.current += baseVelocity + pageScrollDelta * baseVelocity;
+                marqueeScroll.current += baseVelocity + (pageScrollDelta * baseVelocity * Number(enableScrollBoost));
 
                 const width = reference.current.offsetWidth;
                 if (marqueeScroll.current > width) {
@@ -38,11 +43,12 @@ export default function Marquee({children, baseVelocity = 1, rotation = 0, class
         currentFrame = requestAnimationFrame(update);
 
         return () => cancelAnimationFrame(currentFrame);
-    }, [baseVelocity, rotation]);
+    }, [baseVelocity, enableScrollBoost, rotation]);
 
     return (
         <div className={`whitespace-nowrap ${className}`} ref={marquee}>
-            <span ref={reference} aria-hidden="true">{children} </span>{children}
+            <span ref={reference}>{children}{' '}</span>
+            <span aria-hidden="true">{(children + ' ').repeat(repeatCount)}</span>
         </div>
     )
 }

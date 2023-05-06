@@ -39,7 +39,7 @@ export default function Header() {
                         className="hidden md:block"
                     >
                         <Button className="w-14 overflow-hidden md:w-48 word-spacing-6 px-[0!important]">
-                            <Marquee>
+                            <Marquee repeatCount={2}>
                                 {t('download')}
                             </Marquee>
                         </Button>
