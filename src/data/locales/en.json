@@ -1,0 +1,57 @@
+{
+  "nav": {
+    "logo": "Back to homepage",
+    "title": "exteraGram",
+    "description": "experimental third-party Telegram client based on official sources.",
+    "team": "Team",
+    "features": "Features",
+    "download": "Download",
+    "privacy": "Privacy Policy",
+    "source": "Source code",
+    "chats": "Chats",
+    "credits": {
+      "dev": "Developed by",
+      "design": "Designed by"
+    }
+  },
+  "home": {
+    "title": "exteraGram",
+    "description": "Experimental third-party Telegram client based on official sources.",
+    "features": {
+      "title": "Features",
+      "description": "Take a look at a list of features we have!",
+      "settings": "Lots of \nsettings",
+      "music": "Reworked\n player",
+      "customization": "Interface\n customization",
+      "more": "Discover\n all of the features",
+      "button": "Press me!"
+    },
+    "more": {
+      "title": "And much much more",
+      "description": "We are working hard to make exteraGram the best Telegram client for Android.",
+      "download": "Download"
+    },
+    "team": {
+      "title": "The Team",
+      "contact": "Contact"
+    },
+    "download": {
+      "title": "Join our lovely family",
+      "store": "Get it in",
+      "file": "Download as",
+      "link": "Open through",
+      "unavailable": "Soon in"
+    }
+  },
+  "errors": {
+    "notFound": {
+      "description": "the page you are looking for is 100% absolutely non-existent",
+      "button": "Home"
+    }
+  },
+  "meta": {
+    "fullTitle": "exteraGram – next generation telegram client",
+    "title": "exteraGram",
+    "description": "Next generation Telegram client for Android, made by exteraSquad."
+  }
+}
