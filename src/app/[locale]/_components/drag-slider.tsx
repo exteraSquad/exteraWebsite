@@ -57,7 +57,7 @@ export default function DragSlider({children, buttonHeight}: DragSliderProps) {
             }}
             onTouchStart={e => {
                 startDrag(e.touches[0].pageY)
-                decelerationCoefficient.current = 0.9;
+                decelerationCoefficient.current = 0.75;
             }}
 
             onMouseUp={stopDrag}
