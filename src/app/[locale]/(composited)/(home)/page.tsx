@@ -133,11 +133,10 @@ export default function Home() {
                     </p>
                     <Link
                         href="#download"
-                        className="rounded-full font-display font-bold text-2xl text-primary-500 hover:text-white
-                        hover:bg-primary-400 bg-primary-100 transition-colors py-4 px-8 hidden md:block"
-                        role="button"
                     >
-                        {t('more.download')}
+                        <Button>
+                            {t('more.download')}
+                        </Button>
                     </Link>
                 </figure>
             </section>
