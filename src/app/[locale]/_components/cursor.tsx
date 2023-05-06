@@ -69,7 +69,7 @@ export default function Cursor({smoothnessCoefficient = 0.9}: CursorProps) {
     }, [smoothnessCoefficient]);
 
     return (
-        <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-50 hidden md:block">
+        <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-50 only-touch:hidden">
             <div
                 className="absolute transform -translate-x-1/2 -translate-y-1/2 bg-red-500 rounded-full pointer-events-none
                 bg-opacity-50 backdrop-filter backdrop-blur-sm"

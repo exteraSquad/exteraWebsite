@@ -39,6 +39,7 @@ module.exports = {
     },
     plugins: [
         require('@tailwindcss/typography'),
+        require('tailwindcss-interaction-media'),
         plugin(function({ matchUtilities, theme }) {
             matchUtilities(
                 {

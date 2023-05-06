@@ -3564,6 +3564,11 @@ synckit@^0.8.4:
     "@pkgr/utils" "^2.3.1"
     tslib "^2.5.0"
 
+tailwindcss-interaction-media@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/tailwindcss-interaction-media/-/tailwindcss-interaction-media-0.1.0.tgz#c1e24a6eeb2faf292b5e2004d8c7de91eb6a92ca"
+  integrity sha512-3/o9Gc8sXqrUHp/7w4T+Zt46GubrO7BRmxJpB6BogJt0B33K5G1lOVe2q0Ro43Zkk51Tp2ED0zQ/wL5weO+yUw==
+
 tailwindcss@^3.2.7:
   version "3.2.7"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-3.2.7.tgz#5936dd08c250b05180f0944500c01dce19188c07"
