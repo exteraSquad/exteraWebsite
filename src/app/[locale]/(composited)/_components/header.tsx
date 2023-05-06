@@ -1,12 +1,12 @@
 import Link from "@/app/[locale]/_components/localised-link";
 import {CloseCircle, HamburgerMenu} from "solar-icon-set";
-import {useLocale, useTranslations} from "next-intl";
+import {useTranslations} from "next-intl";
 import HomeLink from "@/app/[locale]/(composited)/_components/home-link";
 import HeaderLogo from "@/app/[locale]/(composited)/_components/header-logo";
 import Button from "@/app/[locale]/_components/button";
+import Marquee from "@/app/[locale]/_components/marquee";
 
 export default function Header() {
-    const currentLocale = useLocale();
     const t = useTranslations("nav");
 
     return (
@@ -14,7 +14,6 @@ export default function Header() {
             className="flex justify-between items-center mb-16 font-display font-bold text-2xl sticky top-0 py-8
             bg-white px-8 md:px-16 z-40"
         >
-
             <HeaderLogo />
             <label>
                 <input type="checkbox" className="hidden peer" id="menu"/>
@@ -23,7 +22,8 @@ export default function Header() {
                 </div>
                 <nav
                     className="hidden md:flex peer-checked:flex items-center gap-8 fixed md:static inset-0 w-screen
-                        md:w-auto h-screen md:h-auto flex-col md:flex-row justify-center md:bg-transparent bg-white text-center"
+                    md:w-auto h-screen md:h-auto flex-col md:flex-row justify-center md:bg-transparent bg-white
+                    text-center"
                 >
                     <div className="absolute top-8 right-8 md:hidden w-8">
                         <CloseCircle size={32}/>
@@ -38,12 +38,10 @@ export default function Header() {
                         href="#download"
                         className="hidden md:block"
                     >
-                        <Button className="w-14 overflow-hidden md:w-48 px-[0!important]">
-                            <div
-                                className={`motion-safe:animate-marquee will-change-transform whitespace-nowrap word-spacing-6 
-                                ${currentLocale === "ru" ? "marquee-length-[-79%]" : "marquee-length-[-85%]"}`}>
-                                {t('download')} {t('download')} {t('download')}
-                            </div>
+                        <Button className="w-14 overflow-hidden md:w-48 word-spacing-6 px-[0!important]">
+                            <Marquee>
+                                {t('download')}
+                            </Marquee>
                         </Button>
                     </HomeLink>
                     <HomeLink href="#download" className="md:hidden">

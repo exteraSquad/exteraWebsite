@@ -12,6 +12,7 @@ import {SquareArrowDown} from "solar-icon-set";
 import {checkedIcons} from "@/loaders/icons";
 import Button from "@/app/[locale]/_components/button";
 import {getLocalizedFeatures} from "@/loaders/features";
+import Marquee from "@/app/[locale]/_components/marquee";
 
 export default function Home() {
     const t = useTranslations('home');
@@ -140,6 +141,15 @@ export default function Home() {
                     </Link>
                 </figure>
             </section>
+
+            <div className="overflow-hidden w-full my-16 flex flex-col justify-center h-[48rem] word-spacing-6 text-9xl font-bold font-display">
+                <Marquee rotation={8} className="text-neutral-300">
+                    Handy Beautiful Open Fast Modern
+                </Marquee>
+                <Marquee rotation={8} baseVelocity={-1} className="text-white text-outline-neutral-300">
+                    Handy Beautiful Open Fast Modern
+                </Marquee>
+            </div>
 
             <section className="w-full flex justify-center items-center flex-col gap-16 mb-32">
                 <h2 id="team" className="font-display font-bold text-5xl lg:text-7xl text-center">{t("team.title")}</h2>
