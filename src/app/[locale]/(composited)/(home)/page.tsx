@@ -84,7 +84,7 @@ export default function Home() {
                             )
                         },
                     ]}
-                    className="lg:w-[32rem] h-[28rem] md:h-[36rem] lg:-translate-y-96 rounded-3xl bg-primary-100 text-black"
+                    className="lg:w-[32rem] h-fit md:h-[36rem] lg:-translate-y-96 rounded-3xl bg-primary-100 text-black"
                     leftOffset={24}
                 />
             </section>
