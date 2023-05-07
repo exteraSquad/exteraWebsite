@@ -1,4 +1,4 @@
-import {useLocale, useTranslations} from "next-intl";
+import {useTranslations} from "next-intl";
 import Link from "@/app/[locale]/_components/localised-link";
 import IconCanvas from "@/app/[locale]/_components/icon-canvas";
 import {default as team} from "@/data/team.json";
