@@ -61,8 +61,10 @@ export default function RootLayout(
 export async function generateMetadata(): Promise<Metadata> {
     const locale = getLocale();
     const t = await getTranslations('meta');
+    const canonicalUrl = process.env.CANONICAL_URL || "";
 
     return {
+        metadataBase: new URL(canonicalUrl),
         title: {
             default: t('fullTitle'),
             template: "%s | " + t('title')
@@ -78,13 +80,7 @@ export async function generateMetadata(): Promise<Metadata> {
             description: t('description'),
             siteName: t('title'),
             url: '/',
-            images: [
-                {
-                    url: "/images/og.png",
-                    width: 800,
-                    height: 600,
-                },
-            ],
+            images: "/images/og.png",
         },
         alternates: {
             canonical: '/',

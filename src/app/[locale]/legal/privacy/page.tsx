@@ -4,6 +4,7 @@ import policy from "@/data/privacy-policy.md"
 import {Database, ShieldUser} from "solar-icon-set";
 import logo from "@/app/logo.svg";
 import Image from "next/image";
+import {Metadata} from "next";
 
 export default async function PrivacyPolicy() {
     const processedContent = await remark()
@@ -25,4 +26,8 @@ export default async function PrivacyPolicy() {
             />
         </div>
     )
+}
+
+export const metadata: Metadata = {
+    title: "Privacy Policy",
 }

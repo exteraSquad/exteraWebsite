@@ -3,6 +3,7 @@ import {checkedIcons} from "@/loaders/icons";
 import IconCanvas from "@/app/[locale]/_components/icon-canvas";
 import Link from "@/app/[locale]/_components/link";
 import Button from "@/app/[locale]/_components/button";
+import {Metadata} from "next";
 
 export default function ErrorNotFound() {
     const t = useTranslations("errors.notFound");
@@ -21,4 +22,8 @@ export default function ErrorNotFound() {
             </div>
         </>
     )
+}
+
+export const metadata: Metadata = {
+    title: "404",
 }
