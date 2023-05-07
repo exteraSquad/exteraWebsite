@@ -82,6 +82,18 @@ export async function generateMetadata(): Promise<Metadata> {
             url: '/',
             images: "/images/og.png",
         },
+        twitter: {
+            card: "app",
+            title: t('title'),
+            description: t('description'),
+            images: "/images/og.png",
+            site: "@immat0x1",
+            app: {
+                id: {
+                    googleplay: "com.exteragram.messenger"
+                }
+            }
+        },
         alternates: {
             canonical: '/',
             languages: localeConfig.locales.reduce((acc, locale) => {
