@@ -11,24 +11,12 @@ import Phone from "@/app/[locale]/(composited)/(home)/_components/phone";
 import {SquareArrowDown} from "solar-icon-set";
 import {checkedIcons} from "@/loaders/icons";
 import Button from "@/app/[locale]/_components/button";
-import {getLocalizedFeatures} from "@/loaders/features";
+import {default as features} from "@/data/features.json";
+import {default as moreFeatures} from "@/data/more.json";
 import Marquee from "@/app/[locale]/_components/marquee";
 
 export default function Home() {
     const t = useTranslations('home');
-    const currentLocale = useLocale();
-
-    const genFeatureSlide = (id: string) => ({
-        name: t("features." + id),
-        content: (
-            <div className="flex items-end justify-center w-full h-full">
-                <Image
-                    src={`/images/features/${id}.png`} width={537} height={500} alt={id}
-                    className="object-contain max-h-full"
-                />
-            </div>
-        )
-    })
 
     return (
         <>
@@ -64,9 +52,17 @@ export default function Home() {
 
                 <FeaturesOverview
                     features={[
-                        genFeatureSlide("settings"),
-                        genFeatureSlide("music"),
-                        genFeatureSlide("customization"),
+                        ...features.map(({id, img}) => ({
+                            name: t("features." + id),
+                            content: (
+                                <div className="flex items-end justify-center w-full h-full">
+                                    <Image
+                                        src={img.src} width={img.width} height={img.height} alt={t("features." + id)}
+                                        className="object-contain max-h-full"
+                                    />
+                                </div>
+                            )
+                        })),
                         {
                             name: t("features.more"),
                             content: (
@@ -95,7 +91,7 @@ export default function Home() {
                 rounded-6xl bg-white"
                 id="more"
             >
-                {getLocalizedFeatures(currentLocale).values.map(({img, title, description, note}, i) => (
+                {moreFeatures.map(({img, id, note}, i) => (
                     <figure
                         className={"flex w-full justify-between gap-24 items-center flex-col-reverse " +
                             (i % 2 ? 'md:flex-row-reverse' : 'md:flex-row')}
@@ -103,7 +99,7 @@ export default function Home() {
                     >
                         <Image
                             src={img.src}
-                            alt={img.alt}
+                            alt={t("more." + id + ".alt")}
                             width={img.width}
                             height={img.height}
                             className="w-full md:w-5/12 h-auto"
@@ -112,14 +108,14 @@ export default function Home() {
                             className="flex flex-col justify-center gap-1 text-center md:text-left md:w-7/12 h-fit">
                             {note &&
                                 <p className="text-neutral-400 text-lg">
-                                    {note}
+                                    {t("more." + id + ".note")}
                                 </p>
                             }
                             <h3 className="font-bold font-display text-4xl lg:text-7xl">
-                                {title}
+                                {t("more." + id + ".title")}
                             </h3>
                             <p className="text-neutral-800 text-lg md:text-xl xl:text-2xl mt-4 md:mt-6">
-                                {description}
+                                {t("more." + id + ".description")}
                             </p>
                         </figcaption>
                     </figure>

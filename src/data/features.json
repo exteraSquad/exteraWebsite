@@ -1,54 +1,26 @@
 [
   {
-    "locale": "en",
-    "values": [
-      {
-        "img": {
-          "src": "/images/features/theme.png",
-          "alt": "Demonstration of monet themes",
-          "width": 435,
-          "height": 318
-        },
-        "title": "Dynamic Theme",
-        "description": "exteraGram has the best monet engine among all the clients! It's possible due to the great work that our designers made",
-        "note": "*for Android 12 and higher"
-      },
-      {
-        "img": {
-          "src": "/images/features/ui.png",
-          "alt": "Demonstration of wide variety of UI customization settings",
-          "width": 533,
-          "height": 399
-        },
-        "title": "Interface Customization",
-        "description": "Minimalistic MD3 design is carefully implemented into default telegram UI"
-      }
-    ]
+    "id": "settings",
+    "img": {
+      "src": "/images/features/settings.png",
+      "width": 537,
+      "height": 500
+    }
   },
   {
-    "locale": "ru",
-    "values": [
-      {
-        "img": {
-          "src": "/images/features/theme.png",
-          "alt": "Демонстрация темы Monet",
-          "width": 435,
-          "height": 318
-        },
-        "title": "Динамическая тема",
-        "description": "exteraGram имеет лучший движок Monet среди всех клиентов! Это возможно благодаря большому труду, который наши дизайнеры вложили в этот проект",
-        "note": "*для Android 12 и выше"
-      },
-      {
-        "img": {
-          "src": "/images/features/ui.png",
-          "alt": "Демонстрация широкого спектра настроек пользовательского интерфейса",
-          "width": 533,
-          "height": 399
-        },
-        "title": "Персонализация интерфейса",
-        "description": "Минималистичный MD3 дизайн аккуратно вписаный в стандартный пользовательском интерфейсе телеграма"
-      }
-    ]
+    "id": "music",
+    "img": {
+      "src": "/images/features/music.png",
+      "width": 537,
+      "height": 500
+    }
+  },
+  {
+    "id": "customization",
+    "img": {
+      "src": "/images/features/customization.png",
+      "width": 537,
+      "height": 500
+    }
   }
 ]
