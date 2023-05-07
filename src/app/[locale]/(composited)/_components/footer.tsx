@@ -5,6 +5,7 @@ import FooterLink from "@/app/[locale]/(composited)/_components/footer-link";
 import Link from "@/app/[locale]/_components/localised-link";
 import {SquareArrowUp} from "solar-icon-set";
 import {useTranslations} from "next-intl";
+import {default as splashes} from "@/data/splashes.json";
 
 export default function Footer() {
     const t = useTranslations("nav");
@@ -17,11 +18,7 @@ export default function Footer() {
                     <h3 className="font-display font-bold text-5xl cursor-help">
                         <SplashText splashes={[
                             t("title"),
-                            "beautiful",
-                            "handy",
-                            "modern",
-                            "open",
-                            "fast"
+                            ...splashes.map(s => s.toLowerCase())
                         ]} />
                     </h3>
                     <p className="text-xl text-neutral-800 w-full max-w-xs text-center lg:text-left">{t("description")}</p>

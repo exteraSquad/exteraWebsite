@@ -14,6 +14,7 @@ import Button from "@/app/[locale]/_components/button";
 import {default as features} from "@/data/features.json";
 import {default as moreFeatures} from "@/data/more.json";
 import Marquee from "@/app/[locale]/_components/marquee";
+import {default as splashes} from "@/data/splashes.json";
 
 export default function Home() {
     const t = useTranslations('home');
@@ -139,10 +140,10 @@ export default function Home() {
 
             <div className="overflow-hidden w-full my-8 md:my-16 flex flex-col justify-center h-96 sm:h-[32rem] md:h-[48rem] word-spacing-6 text-6xl sm:text-8xl md:text-9xl font-bold font-display">
                 <Marquee rotation={8} className="text-neutral-300" enableScrollBoost>
-                    Handy Beautiful Open Fast Modern
+                    {splashes.join(" ")}
                 </Marquee>
                 <Marquee rotation={8} baseVelocity={-1} className="text-white text-outline-neutral-300" enableScrollBoost>
-                    Handy Beautiful Open Fast Modern
+                    {splashes.join(" ")}
                 </Marquee>
             </div>
 
