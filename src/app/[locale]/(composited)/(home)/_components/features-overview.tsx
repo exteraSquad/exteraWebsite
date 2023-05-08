@@ -67,7 +67,7 @@ export default function FeaturesOverview({features, className, smoothnessCoeffic
                             setSlide(i)
                         }}
                         className={"min-w-max max-h-20 whitespace-pre-line " +
-                            (slide !== i ? "text-neutral-700" : "text-black")}
+                            (slide !== i ? "text-neutral-500" : "text-black")}
                         key={i}
                     >
                         {name}
