@@ -103,6 +103,7 @@ export default function Home() {
                             alt={t("more." + id + ".alt")}
                             width={img.width}
                             height={img.height}
+                            quality={100}
                             className="w-full md:w-5/12 h-auto"
                         />
                         <figcaption

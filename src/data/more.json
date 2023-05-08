@@ -3,8 +3,8 @@
     "id": "theme",
     "img": {
       "src": "/images/features/theme.png",
-      "width": 435,
-      "height": 318
+      "width": 1024,
+      "height": 750
     },
     "note": true
   },
@@ -12,8 +12,8 @@
     "id": "ui",
     "img": {
       "src": "/images/features/ui.png",
-      "width": 533,
-      "height": 399
+      "width": 1024,
+      "height": 767
     }
   }
 ]
