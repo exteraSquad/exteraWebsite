@@ -139,10 +139,11 @@ export default function Home() {
             </section>
 
             <div className="overflow-hidden w-full my-8 md:my-16 flex flex-col justify-center h-96 sm:h-[32rem] md:h-[48rem] word-spacing-6 text-6xl sm:text-8xl md:text-9xl font-bold font-display">
-                <Marquee rotation={8} className="text-neutral-300" enableScrollBoost>
+                <Marquee rotation={8} className="text-neutral-300" scrollBoost={0.25}>
                     {splashes.join(" ")}
                 </Marquee>
-                <Marquee rotation={8} baseVelocity={-1} className="text-white text-outline-neutral-300" enableScrollBoost>
+                <div className="h-12" />
+                <Marquee rotation={8} baseVelocity={-1} className="text-white text-outline-neutral-300" scrollBoost={0.25}>
                     {splashes.join(" ")}
                 </Marquee>
             </div>

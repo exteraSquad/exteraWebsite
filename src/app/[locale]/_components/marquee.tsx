@@ -8,11 +8,11 @@ export type MarqueeProps = {
     rotation?: number,
     className?: string,
     repeatCount?: number,
-    enableScrollBoost?: boolean
+    scrollBoost?: number
 }
 
 export default function Marquee(
-    {children, baseVelocity = 1, rotation = 0, repeatCount = 1, enableScrollBoost = false, className}: MarqueeProps
+    {children, baseVelocity = 1, rotation = 0, repeatCount = 1, scrollBoost = 0, className}: MarqueeProps
 ) {
     const previousPageScroll = useRef(0);
     const marqueeScroll = useRef(0);
@@ -27,7 +27,7 @@ export default function Marquee(
                 const pageScrollDelta = pageScroll - previousPageScroll.current;
                 previousPageScroll.current = pageScroll;
 
-                marqueeScroll.current += baseVelocity + (pageScrollDelta * baseVelocity * Number(enableScrollBoost));
+                marqueeScroll.current += baseVelocity + (pageScrollDelta * baseVelocity * scrollBoost);
 
                 const width = reference.current.offsetWidth;
                 if (marqueeScroll.current > width) {
@@ -43,7 +43,7 @@ export default function Marquee(
         currentFrame = requestAnimationFrame(update);
 
         return () => cancelAnimationFrame(currentFrame);
-    }, [baseVelocity, enableScrollBoost, rotation]);
+    }, [baseVelocity, scrollBoost, rotation]);
 
     return (
         <div className={`whitespace-nowrap ${className}`} ref={marquee}>
