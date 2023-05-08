@@ -16,10 +16,13 @@ export default function SplashText({splashes}: SplashTextProps) {
     }, [index, splashes.length])
 
     useEffect(() => {
-        if (!active) return;
+        if (!active) {
+            if (index !== 0) setIndex(0);
+            return;
+        }
         timeout.current = setTimeout(update, 600) as unknown as number;
         return () => clearTimeout(timeout.current)
-    }, [active, splashes, update])
+    }, [active, index, splashes, update])
 
     return <div onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)} className="w-full">{splashes[index]}</div>
 }

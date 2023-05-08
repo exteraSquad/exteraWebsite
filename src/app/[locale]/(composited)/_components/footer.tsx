@@ -15,7 +15,7 @@ export default function Footer() {
             <div className="flex flex-col lg:flex-row w-full justify-between items-center gap-8">
                 <div className="flex flex-col gap-4 items-center lg:items-start">
                     <Image src={logo} alt={t("logo")} width={64} />
-                    <h3 className="font-display font-bold text-5xl cursor-help">
+                    <h3 className="font-display font-bold text-5xl cursor-help w-full max-w-xs text-center lg:text-left">
                         <SplashText splashes={[
                             t("title"),
                             ...splashes.map(s => s.toLowerCase())
