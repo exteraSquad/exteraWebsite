@@ -72,8 +72,8 @@ export default function Home() {
                                         href="#more"
                                         role="button"
                                         className="w-32 h-32 aspect-square hover:bg-primary-500 flex-col hover:text-primary-50
-                                        rounded-full bg-white text-primary-500 flex justify-center items-center
-                                        transition-colors active:bg-primary-400 active:text-primary-50"
+                                        rounded-full bg-white text-primary-500 flex justify-center items-center transition-colors
+                                        active:bg-primary-400 active:text-primary-50 duration-300 ease-in-out"
                                     >
                                         <SquareArrowDown size={60} iconStyle="Bold" />
                                     </Link>
