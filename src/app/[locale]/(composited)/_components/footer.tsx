@@ -23,7 +23,7 @@ export default function Footer() {
                     </h3>
                     <p className="text-xl text-neutral-800 w-full max-w-xs text-center lg:text-left">{t("description")}</p>
                 </div>
-                <div className="flex flex-col gap-8 lg:gap-4 items-center lg:items-start">
+                <div className="flex flex-col gap-8 lg:gap-4 items-center lg:items-start w-full max-w-xs">
                     <FooterLink
                         href="#download"
                         text={t('download')}
@@ -33,7 +33,7 @@ export default function Footer() {
                         text={t('privacy')}
                     />
                 </div>
-                <div className="flex flex-col gap-8 lg:gap-4 items-center lg:items-start">
+                <div className="flex flex-col gap-8 lg:gap-4 items-center lg:items-start w-full max-w-xs">
                     <FooterLink
                         href="https://github.com/exteraSquad"
                         text={t('source')}
