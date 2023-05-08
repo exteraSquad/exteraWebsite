@@ -12,7 +12,7 @@ export default function Cursor({smoothnessCoefficient = 0.9}: CursorProps) {
     const trailPosition = useRef<{ x: number, y: number }>({x: 0, y: 0});
     const trailSize = useRef<{ width: number, height: number }>({width: 0, height: 0});
     const pullOpacity = useRef(0);
-    const pullText = useRef<HTMLSpanElement>(null);
+    const pullText = useRef<HTMLDivElement>(null);
     const hoveredElement = useRef<Element | null>(null);
 
     useEffect(() => {
@@ -31,11 +31,9 @@ export default function Cursor({smoothnessCoefficient = 0.9}: CursorProps) {
 
                 // Trail size
                 const trailSizeTarget =
-                    cursorStyle === "pointer" ? {width: 32, height: 32} :
-                        cursorStyle === "grab" ? {width: 48, height: 48} :
-                            cursorStyle === "grabbing" ? {width: 64, height: 32} :
-                                cursorStyle === "help" ? {width: 2, height: 2} :
-                                    {width: 16, height: 16};
+                    cursorStyle === "pointer" ? {width: 24, height: 24} :
+                        cursorStyle === "grab" ? {width: 64, height: 64} :
+                            {width: 12, height: 12};
 
                 trailSize.current.width = trailSize.current.width * smoothnessCoefficient + trailSizeTarget.width * (1 - smoothnessCoefficient);
                 trailSize.current.height = trailSize.current.height * smoothnessCoefficient + trailSizeTarget.height * (1 - smoothnessCoefficient);
@@ -71,16 +69,19 @@ export default function Cursor({smoothnessCoefficient = 0.9}: CursorProps) {
     return (
         <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-50 only-touch:hidden">
             <div
-                className="absolute transform -translate-x-1/2 -translate-y-1/2 bg-red-500 rounded-full pointer-events-none
-                bg-opacity-50 backdrop-filter backdrop-blur-sm"
+                className="absolute transform -translate-x-1/2 -translate-y-1/2 bg-primary-500 rounded-full pointer-events-none"
                 ref={trail}
             >
-                <span
-                    className="relative text-white text-sm font-bold pointer-events-none left-1/4 top-1/3"
+                <div
+                    className="relative flex items-center justify-center w-full h-full"
                     ref={pullText}
                 >
-                    Pull
-                </span>
+                    <span
+                        className="text-white text-sm font-bold"
+                    >
+                        PULL
+                    </span>
+                </div>
             </div>
         </div>
     )
