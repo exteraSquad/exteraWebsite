@@ -51,7 +51,7 @@ export default function Footer() {
                         active:bg-primary-400 active:text-primary-50 duration-300 ease-in-out"
                 >
                     <div className="group-hover:-translate-y-32 transition-transform duration-300 ease-in-out">up</div>
-                    <div className="translate-y-32 group-hover:-translate-y-12 transition-transform h-0 duration-300 ease-in-out">
+                    <div className="translate-y-32 group-hover:-translate-y-5 transition-transform h-0 duration-300 ease-in-out flex items-center">
                         <SquareArrowUp size={60} iconStyle="Bold" />
                     </div>
                 </Link>

@@ -39,7 +39,7 @@ export default function Home() {
 
             <section
                 className="w-full bg-black text-white justify-between flex lg:px-24 lg:py-36 lg:gap-4 mb-16 flex-col
-                lg:flex-row rounded-4xl lg:rounded-6xl lg:h-[28rem] mt-64 sm:p-12 sm:pt-16 gap-16 p-4 pt-12"
+                lg:flex-row rounded-4xl lg:rounded-6xl lg:h-[28rem] mt-64 sm:p-12 sm:pt-16 gap-12 p-4 pt-12"
                 id="features"
             >
                 <div className="flex flex-col gap-4">
