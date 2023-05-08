@@ -18,16 +18,23 @@ export default function Marquee(
     const marqueeScroll = useRef(0);
     const marquee = useRef<HTMLDivElement>(null);
     const reference = useRef<HTMLSpanElement>(null);
+    const currentVelocity = useRef(baseVelocity);
 
     useEffect(() => {
         let currentFrame = 0;
         const update = () => {
             if (marquee.current && reference.current) {
                 const pageScroll = window.scrollY;
-                const pageScrollDelta = pageScroll - previousPageScroll.current;
+                const pageScrollDelta = (pageScroll - previousPageScroll.current) * scrollBoost;
                 previousPageScroll.current = pageScroll;
 
-                marqueeScroll.current += baseVelocity + (pageScrollDelta * baseVelocity * scrollBoost);
+                if (pageScrollDelta < 0) {
+                    currentVelocity.current = -baseVelocity;
+                } else if (pageScrollDelta > 0) {
+                    currentVelocity.current = baseVelocity;
+                }
+
+                marqueeScroll.current += currentVelocity.current + pageScrollDelta * baseVelocity;
 
                 const width = reference.current.offsetWidth;
                 if (marqueeScroll.current > width) {
