@@ -11,7 +11,7 @@ export default function Header() {
 
     return (
         <header
-            className="flex justify-between items-center mb-16 font-display font-bold text-2xl sticky top-0 py-8
+            className="flex justify-between items-center mb-16 font-display font-bold text-2xl sticky top-0 py-4 md:py-8
             bg-white px-8 md:px-16 z-40"
         >
             <HeaderLogo />
