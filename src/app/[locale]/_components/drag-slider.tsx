@@ -16,7 +16,7 @@ export default function DragSlider({children, buttonHeight}: DragSliderProps) {
     const currentTouch = useRef<{ x: number, y: number } | null>(null);
     const velX = useRef(0);
     const accX = useRef(0);
-    const decelerationCoefficient = useRef(0.4);
+    const decelerationCoefficient = useRef(0.92);
 
     const startDrag = useCallback((pageY: number) => {
         if (!root.current) return;
@@ -38,6 +38,7 @@ export default function DragSlider({children, buttonHeight}: DragSliderProps) {
         const update = () => {
             if (root.current) {
                 velX.current += accX.current;
+                if (dragged && Math.abs(velX.current) > Math.abs(accX.current)) velX.current = accX.current;
                 root.current.scrollLeft += velX.current;
                 accX.current = 0;
                 velX.current *= decelerationCoefficient.current;
@@ -53,11 +54,9 @@ export default function DragSlider({children, buttonHeight}: DragSliderProps) {
             className={`grid grid-flow-col select-none gap-8 items-center w-full max-w-full overflow-x-hidden ${dragged ? 'cursor-grabbing' : 'cursor-grab'}`}
             onMouseDown={e => {
                 startDrag(e.pageY)
-                decelerationCoefficient.current = 0.4;
             }}
             onTouchStart={e => {
                 startDrag(e.touches[0].pageY)
-                decelerationCoefficient.current = 0.75;
             }}
 
             onMouseUp={stopDrag}
