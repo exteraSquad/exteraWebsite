@@ -51,7 +51,9 @@ export default function DragSlider({children, buttonHeight}: DragSliderProps) {
 
     return (
         <div
-            className={`grid grid-flow-col select-none gap-8 items-center w-full max-w-full overflow-x-hidden ${dragged ? 'cursor-grabbing' : 'cursor-grab'}`}
+            className={`px-5 md:px-8 grid grid-flow-col select-none gap-8 items-center w-full max-w-full overflow-x-hidden 
+            ${dragged ? 'cursor-grabbing' : 'cursor-grab'}`}
+
             onMouseDown={e => {
                 startDrag(e.pageY)
             }}

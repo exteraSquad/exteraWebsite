@@ -43,12 +43,28 @@ module.exports = {
                 '4xl': '2rem',
                 '5xl': '2.5rem',
                 '6xl': '3rem',
+            },
+            margin: {
+                'offset': 'var(--tw-offset)',
+            },
+            width: {
+                'full-no-offset': 'calc(100% - var(--tw-offset) * 2)',
             }
         }
     },
     plugins: [
         require('@tailwindcss/typography'),
         require('tailwindcss-interaction-media'),
+        plugin(function({ matchUtilities, theme }) {
+            matchUtilities(
+                {
+                    'o': (value) => ({
+                        '--tw-offset': value
+                    }),
+                },
+                { values: theme('margin') }
+            )
+        }),
         plugin(function({ matchUtilities, theme }) {
             matchUtilities(
                 {
@@ -77,6 +93,6 @@ module.exports = {
                 }
             }))
             addUtilities(colorMap)
-        })
+        }),
     ],
 }

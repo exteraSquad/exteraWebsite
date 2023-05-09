@@ -23,7 +23,7 @@ export default function Home() {
         <>
             <IconCanvas probability={0.02} paths={checkedIcons} color="#F54142" height={1700}/>
 
-            <section className="w-full flex justify-center items-center flex-col gap-4 mt-32 md:mt-48 mb-16" id="top">
+            <section className="w-full flex justify-center items-center flex-col gap-4 mt-32 md:mt-48 mb-16 px-4" id="top">
                 <h1 className="text-primary-500 font-bold font-display text-5xl md:text-6xl lg:text-7xl">{t("title")}</h1>
                 <p className="text-xl md:text-2xl text-neutral-800 w-full md:w-[30rem] text-center">{t("description")}</p>
                 <Link
@@ -38,8 +38,8 @@ export default function Home() {
             </section>
 
             <section
-                className="w-full bg-black text-white justify-between flex lg:px-24 lg:py-36 lg:gap-4 mb-16 flex-col
-                lg:flex-row rounded-4xl lg:rounded-6xl lg:h-[28rem] mt-64 sm:p-12 sm:pt-16 gap-12 p-4 pt-12"
+                className="bg-black text-white justify-between flex lg:px-24 lg:py-36 lg:gap-4 mb-16 flex-col w-full-no-offset
+                lg:flex-row rounded-4xl lg:rounded-6xl lg:h-[28rem] mt-64 sm:p-12 sm:pt-16 gap-12 p-4 pt-12 mx-offset md:o-16"
                 id="features"
             >
                 <div className="flex flex-col gap-4">
@@ -88,8 +88,8 @@ export default function Home() {
             </section>
 
             <section
-                className="w-full flex justify-center items-center flex-col gap-24 mb-16 border-2 py-12 px-4 md:px-12 lg:p-20
-                border-neutral-100 rounded-4xl md:rounded-6xl bg-white"
+                className="flex justify-center items-center flex-col gap-24 mb-16 border-2 py-12 px-4 md:px-12 lg:p-20
+                border-neutral-100 rounded-4xl md:rounded-6xl bg-white md:o-16 o-4 mx-offset w-full-no-offset"
                 id="more"
             >
                 {moreFeatures.map(({img, id, note}, i) => (
@@ -139,11 +139,14 @@ export default function Home() {
                 </figure>
             </section>
 
-            <div className="overflow-hidden w-full my-8 md:my-16 flex flex-col justify-center h-96 sm:h-[32rem] md:h-[48rem] word-spacing-6 text-6xl sm:text-8xl md:text-9xl font-bold font-display">
+            <div
+                className="overflow-hidden w-full my-8 md:my-16 flex flex-col justify-center h-96 sm:h-[32rem] md:h-[48rem]
+                word-spacing-6 text-6xl sm:text-8xl md:text-9xl font-bold font-display"
+            >
                 <Marquee rotation={8} className="text-neutral-300" scrollBoost={0.25}>
                     {splashes.join(" ")}
                 </Marquee>
-                <div className="h-12" />
+                <div className="h-4 md:h-12" />
                 <Marquee rotation={8} baseVelocity={-1} className="text-white text-outline-neutral-300" scrollBoost={0.25}>
                     {splashes.join(" ")}
                 </Marquee>
@@ -167,7 +170,7 @@ export default function Home() {
                 </DragSlider>
             </section>
 
-            <section className="w-full flex justify-center items-center flex-col gap-16" id="download">
+            <section className="w-full flex justify-center items-center flex-col px-5 md:px-8 gap-8 md:gap-16" id="download">
                 <h2 className="font-display font-bold text-5xl lg:text-7xl text-center">{t("download.title")}</h2>
                 <div className="flex flex-row flex-wrap gap-8 justify-center w-full">
                     <DownloadButton name="RuStore" eyebrow={t("download.store")} icon={
