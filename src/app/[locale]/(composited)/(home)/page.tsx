@@ -88,8 +88,8 @@ export default function Home() {
             </section>
 
             <section
-                className="w-full flex justify-center items-center flex-col gap-24 mb-16 border-2 py-12 px-4 md:px-12 lg:p-20 border-neutral-100
-                rounded-6xl bg-white"
+                className="w-full flex justify-center items-center flex-col gap-24 mb-16 border-2 py-12 px-4 md:px-12 lg:p-20
+                border-neutral-100 rounded-4xl md:rounded-6xl bg-white"
                 id="more"
             >
                 {moreFeatures.map(({img, id, note}, i) => (
