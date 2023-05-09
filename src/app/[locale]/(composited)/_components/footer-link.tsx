@@ -9,8 +9,8 @@ export default function FooterLink({href, text}: FooterLinkProps) {
     return (
         <HomeLink
             href={href}
-            className="text-neutral-800 hover:text-black lg:hover:font-semibold text-3xl lg:text-lg transition-all w-fit
-                text-center lg:text-left font-display font-bold lg:font-sans lg:font-normal"
+            className="text-neutral-800 hover:text-black lg:hover:font-semibold text-4xl md:text-3xl lg:text-lg transition-all
+            w-fit text-center lg:text-left font-display font-bold lg:font-sans lg:font-normal"
             underline
             key={text}
         >

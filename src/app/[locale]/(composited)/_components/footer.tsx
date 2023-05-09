@@ -13,15 +13,15 @@ export default function Footer() {
     return (
         <footer className="flex flex-col gap-16 mt-16 px-8 md:px-16 bg-white pt-4 pb-16">
             <div className="flex flex-col lg:flex-row w-full justify-between items-center gap-8">
-                <div className="flex flex-col gap-4 items-center lg:items-start">
+                <div className="flex flex-col gap-4 items-center lg:items-start mb-12 md:mb-0">
                     <Image src={logo} alt={t("logo")} width={64} />
-                    <h3 className="font-display font-bold text-5xl cursor-help w-full max-w-xs text-center lg:text-left">
+                    <h3 className="font-display font-bold text-4xl md:text-5xl cursor-help w-full max-w-xs text-center lg:text-left">
                         <SplashText splashes={[
                             t("title"),
                             ...splashes.map(s => s.toLowerCase())
                         ]} />
                     </h3>
-                    <p className="text-xl text-neutral-800 w-full max-w-xs text-center lg:text-left">{t("description")}</p>
+                    <p className="text-xl text-neutral-800 w-full max-w-sm text-center lg:text-left">{t("description")}</p>
                 </div>
                 <div className="flex flex-col gap-8 lg:gap-4 items-center lg:items-start w-full max-w-xs">
                     <FooterLink
