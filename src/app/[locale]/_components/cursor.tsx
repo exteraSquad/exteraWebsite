@@ -1,6 +1,6 @@
 "use client";
 
-import {useEffect, useRef} from "react";
+import {useEffect, useRef, useState} from "react";
 
 export type CursorProps = {
     smoothnessCoefficient?: number;
@@ -14,13 +14,15 @@ export default function Cursor({smoothnessCoefficient = 0.9}: CursorProps) {
     const pullOpacity = useRef(0);
     const pullText = useRef<HTMLDivElement>(null);
     const hoveredElement = useRef<Element | null>(null);
+    const [light, setLight] = useState(false);
 
     useEffect(() => {
         let currentFrame: number;
         const move = () => {
             hoveredElement.current = document.elementFromPoint(mousePosition.current.x, mousePosition.current.y);
             if (trail.current && pullText.current) {
-                const cursorStyle = hoveredElement.current ? window.getComputedStyle(hoveredElement.current)["cursor"] : "auto" as const;
+                const computedStyle = hoveredElement.current ? getComputedStyle(hoveredElement.current) : null;
+                const cursorStyle = computedStyle?.cursor || "default";
 
                 // Trail position
                 trailPosition.current.x = trailPosition.current.x * smoothnessCoefficient + mousePosition.current.x * (1 - smoothnessCoefficient);
@@ -40,6 +42,13 @@ export default function Cursor({smoothnessCoefficient = 0.9}: CursorProps) {
 
                 trail.current.style.width = trailSize.current.width + "px";
                 trail.current.style.height = trailSize.current.height + "px";
+
+                // Light
+                const linkParent = hoveredElement.current?.closest("button, a");
+                const isLight = (cursorStyle === "pointer" &&
+                    linkParent?.className.includes("bg-primary-500")
+                ) || cursorStyle === "grab";
+                setLight(isLight);
 
                 // Pull text opacity
                 const pullOpacityTarget = cursorStyle === "grab" ? 1 : 0;
@@ -69,7 +78,8 @@ export default function Cursor({smoothnessCoefficient = 0.9}: CursorProps) {
     return (
         <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-50 only-touch:hidden">
             <div
-                className="absolute transform -translate-x-1/2 -translate-y-1/2 bg-primary-500 rounded-full pointer-events-none"
+                className={`absolute transform -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none
+                ${light ? "bg-primary-100" : "bg-primary-500"} transition-colors duration-300 ease-in-out`}
                 ref={trail}
             >
                 <div
@@ -77,7 +87,7 @@ export default function Cursor({smoothnessCoefficient = 0.9}: CursorProps) {
                     ref={pullText}
                 >
                     <span
-                        className="text-white text-sm font-bold"
+                        className={`text-sm font-bold ${light ? "text-primary-500" : "text-primary-100"} transition-colors duration-300 ease-in-out`}
                     >
                         PULL
                     </span>
