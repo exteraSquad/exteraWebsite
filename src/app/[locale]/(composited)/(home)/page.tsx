@@ -130,7 +130,7 @@ export default function Home() {
                                     {t("more." + id + ".note")}
                                 </p>
                             }
-                            <h3 className="font-bold font-display text-4xl lg:text-7xl">
+                            <h3 className="font-bold font-display text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl">
                                 {t("more." + id + ".title")}
                             </h3>
                             <p className="text-neutral-800 text-lg md:text-xl xl:text-2xl mt-4 md:mt-6">

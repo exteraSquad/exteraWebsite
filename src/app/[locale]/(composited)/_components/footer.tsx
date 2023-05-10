@@ -48,7 +48,7 @@ export default function Footer() {
                     role="button"
                     className="group w-32 h-32 font-bold font-display aspect-square text-4xl overflow-hidden hover:bg-primary-500 flex-col
                         hover:text-primary-50 rounded-full bg-primary-100 text-primary-500 flex justify-center items-center transition-colors
-                        active:bg-primary-400 active:text-primary-50 duration-300 ease-in-out"
+                        active:bg-primary-400 active:text-primary-50 duration-300 ease-in-out min-w-max min-h-max"
                 >
                     <div className="group-hover:-translate-y-32 transition-transform duration-300 ease-in-out">up</div>
                     <div className="translate-y-32 group-hover:-translate-y-5 transition-transform h-0 duration-300 ease-in-out flex items-center">
