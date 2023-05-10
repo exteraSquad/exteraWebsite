@@ -1,0 +1,26 @@
+[
+  {
+    "eyebrowId": "store",
+    "name": "RuStore",
+    "icon": "/images/downloads/ruStore.svg",
+    "href": "https://apps.rustore.ru/app/com.exteragram.messenger"
+  },
+  {
+    "eyebrowId": "unavailable",
+    "name": "Google Play",
+    "icon": "/images/downloads/googlePlay.svg",
+    "unavailable": true
+  },
+  {
+    "eyebrowId": "file",
+    "name": "APK",
+    "icon": "/images/downloads/apk.svg",
+    "href": "https://t.me/exteraReleases"
+  },
+  {
+    "eyebrowId": "link",
+    "name": "Telegram",
+    "icon": "/images/downloads/telegram.svg",
+    "href": "https://t.me/exteraGram"
+  }
+]

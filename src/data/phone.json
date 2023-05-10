@@ -1,0 +1,56 @@
+{
+  "phone": "/images/phone/phone.png",
+  "elements": [
+    {
+      "id": "emojis",
+      "src": "/images/phone/emojis.png",
+      "top": 144,
+      "z": -10,
+      "width": 272,
+      "height": 68,
+      "rotate": "{p} * -3",
+      "translateX": "{p} * -192 + 16"
+    },
+    {
+      "id": "update",
+      "src": "/images/phone/update.png",
+      "top": 256,
+      "z": -10,
+      "width": 250,
+      "height": 340,
+      "rotate": "{p} * -5 - 3",
+      "translateX": "{p} * -192 + 16"
+    },
+    {
+      "id": "speed",
+      "src": "/images/phone/speed.png",
+      "width": 272,
+      "height": 120,
+      "z": -10,
+      "rotate": "{p} * 6",
+      "translateY": "{p} * -64"
+    },
+    {
+      "id": "icons",
+      "src": "/images/phone/icons.png",
+      "top": 384,
+      "z": 10,
+      "width": 190,
+      "height": 70,
+      "opacity": "{p}",
+      "rotate": "{p} * 4",
+      "translateX": "{p} * 192 - 16"
+    },
+    {
+      "id": "settings",
+      "src": "/images/phone/settings.png",
+      "top": 192,
+      "z": 10,
+      "width": 268,
+      "height": 168,
+      "opacity": "{p}",
+      "rotate": "(1 - {p}) * 5",
+      "translateX": "{p} * 192 - 16"
+    }
+  ]
+}

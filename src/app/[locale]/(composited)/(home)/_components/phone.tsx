@@ -2,84 +2,86 @@
 
 import {useEffect, useRef} from "react";
 import Image from "next/image";
+import {evaluate} from "mathjs";
 
-export default function Phone() {
+export type PhoneElement = {
+    id: string,
+    src: string,
+    alt: string,
+    width: number,
+    height: number,
+    z?: number,
+    rotate?: string,
+    translateX?: string,
+    translateY?: string,
+    top?: number,
+    opacity?: string
+}
+
+export type PhoneProps = {
+    data: PhoneElement[],
+    phone: {
+        src: string,
+        alt: string,
+    }
+}
+
+export default function Phone({data, phone: {src, alt}}: PhoneProps) {
     const progress = useRef(0);
     const root = useRef<HTMLDivElement>(null);
-
-    const emojis = useRef<HTMLImageElement>(null);
-    const speed = useRef<HTMLImageElement>(null);
-    const update  = useRef<HTMLImageElement>(null);
-    const icons = useRef<HTMLImageElement>(null);
-    const settings = useRef<HTMLImageElement>(null);
+    const elements = useRef<HTMLImageElement[]>([]);
 
     useEffect(() => {
         let currentFrame = 0;
+        const calculate = (s: string): number => {
+            const input = s.replaceAll("{p}", String(progress.current));
+            return evaluate(input);
+        }
         const render = () => {
             if (root.current) {
                 const rect = root.current.getBoundingClientRect();
                 progress.current = Math.min(1, window.scrollY / rect.height * 1.25);
-
-                emojis.current!.style.transform = `rotate(${progress.current * -3}deg) translateX(${progress.current * -192 + 16}px)`
-                speed.current!.style.transform = `rotate(${progress.current * 6}deg) translateY(${progress.current * -64}px)`
-                update.current!.style.transform = `rotate(${progress.current * -5 - 3}deg) translateX(${progress.current * -192 + 16}px)`
-                icons.current!.style.opacity = String(progress.current)
-                icons.current!.style.transform = `rotate(${progress.current * 4}deg) translateX(${progress.current * 192 - 16}px)`
-                settings.current!.style.opacity = String(progress.current)
-                settings.current!.style.transform = `rotate(${(1 - progress.current) * 5}deg) translateX(${progress.current * 192 - 16}px)`
+                elements.current.forEach((element, i) => {
+                    const item = data[i];
+                    if (element) {
+                        element.style.opacity = calculate(item.opacity || "1").toString();
+                        element.style.transform = `rotate(${calculate(item.rotate || "0")}deg) ` +
+                            `translateY(${calculate(item.translateY || "0")}px) ` +
+                            `translateX(${calculate(item.translateX || "0")}px)`;
+                    }
+                })
             }
             currentFrame = requestAnimationFrame(render);
         }
         currentFrame = requestAnimationFrame(render);
 
         return () => cancelAnimationFrame(currentFrame);
-    }, [])
+    }, [data])
 
     return (
         <div ref={root} className="relative my-32">
             <div className="hidden md:contents">
-                <Image
-                    src="/images/phone/emojis.png"
-                    className="absolute top-36 -z-10"
-                    ref={emojis}
-                    alt="emoji picker panel"
-                    width={272}
-                    height={68}
-                />
-                <Image
-                    src="/images/phone/update.png"
-                    className="absolute top-64 -z-10"
-                    ref={update}
-                    alt="app update panel"
-                    width={250}
-                    height={340}
-                />
-                <Image
-                    src="/images/phone/speed.png"
-                    className="absolute -z-10"
-                    ref={speed}
-                    alt="speed boost menu"
-                    width={272}
-                    height={68}
-                />
-                <Image
-                    src="/images/phone/icons.png"
-                    className="absolute top-96 z-10 opacity-0"
-                    ref={icons}
-                    alt="random icons"
-                    width={190}
-                    height={70}
-                />
-                <Image
-                    src="/images/phone/settings.png"
-                    className="absolute top-48 z-10 opacity-0"
-                    ref={settings}
-                    alt="setting toggles"
-                    width={268}
-                    height={168}
-                />
+                {data.map((item, i) =>
+                    <Image
+                        src={item.src}
+                        alt={item.alt}
+                        width={item.width}
+                        height={item.height}
+                        className="absolute"
+                        style={{
+                            zIndex: item.z,
+                            top: item.top,
+                            opacity: 0,
+                            transform: "none"
+                        }}
+                        ref={ref => {
+                            if (ref) elements.current[i] = ref
+                        }}
+                        key={i}
+                    />
+                )}
             </div>
-            <Image className="mx-auto" src="/images/phone/phone.png" alt="Phone" width={288} height={616} />
+            <Image className="mx-auto" src={src} alt={alt} width={288} height={616} />
         </div>
     )
 }

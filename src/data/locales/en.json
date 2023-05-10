@@ -17,6 +17,14 @@
   "home": {
     "title": "exteraGram",
     "description": "Experimental third-party Telegram client based on official sources.",
+    "phone": {
+      "phone": "Phone with exteraGram settings open",
+      "emojis": "Panel with default and custom emojis",
+      "update": "Menu with update options",
+      "speed": "Settings for boosting media upload and download speed",
+      "icons": "Various icons",
+      "settings": "Various settings available"
+    },
     "features": {
       "title": "Features",
       "description": "Take a look at a list of features we have!",
