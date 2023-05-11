@@ -192,13 +192,13 @@ export default function Home() {
                 <h2 className="font-display font-bold text-5xl lg:text-7xl text-center">{t("download.title")}</h2>
                 <div className="flex flex-row flex-wrap gap-8 justify-center w-full">
                     {
-                        downloads.map(({name, icon, eyebrowId, ...data}, i) => (
+                        downloads.map(({name, icon, eyebrowId, unavailable, href}, i) => (
                             <DownloadButton
                                 key={i}
                                 name={name}
                                 icon={unsafelyLoadSVG(localisePath(icon))}
                                 eyebrow={t("download." + eyebrowId)}
-                                {...data}
+                                {...(unavailable ? {disabled: true} : {href})}
                             />
                         ))
                     }
