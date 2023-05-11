@@ -1,12 +1,13 @@
 import Link from "@/app/[locale]/_components/localised-link";
 import {CloseCircle, HamburgerMenu} from "solar-icon-set";
-import {useTranslations} from "next-intl";
+import {useLocale, useTranslations} from "next-intl";
 import HomeLink from "@/app/[locale]/(composited)/_components/home-link";
-import HeaderLogo from "@/app/[locale]/(composited)/_components/header-logo";
+import LocaleToggle from "@/app/[locale]/(composited)/_components/locale-toggle";
 import Button from "@/app/[locale]/_components/button";
 import Marquee from "@/app/[locale]/_components/marquee";
 
 export default function Header() {
+    const currentLocale = useLocale();
     const t = useTranslations("nav");
 
     return (
@@ -14,7 +15,7 @@ export default function Header() {
             className="flex justify-between items-center mb-16 font-display font-bold text-2xl sticky top-0 py-4 md:py-8
             bg-white px-8 md:px-16 z-40"
         >
-            <HeaderLogo />
+            <LocaleToggle currentLocale={currentLocale} />
             <label>
                 <input type="checkbox" className="hidden peer" id="menu"/>
                 <div className="md:hidden cursor-pointer">

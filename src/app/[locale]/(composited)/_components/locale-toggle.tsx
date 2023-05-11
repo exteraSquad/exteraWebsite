@@ -5,7 +5,7 @@ import {usePathname} from "next-intl/client";
 import {localeConfig} from "@/i18n";
 import {Fragment} from "react";
 
-export default function HeaderLogo() {
+export default function LocaleToggle({currentLocale}: {currentLocale: string}) {
     const path = usePathname();
 
     return (
@@ -17,7 +17,10 @@ export default function HeaderLogo() {
                             <Link
                                 href={path || "/"}
                                 locale={locale}
-                                className="uppercase"
+                                className={"uppercase" +
+                                    (locale === currentLocale ? " underline decoration-4 underline-offset-8 text-primary-500"
+                                        : ""
+                                    )}
                             >
                                 {locale}
                             </Link>
