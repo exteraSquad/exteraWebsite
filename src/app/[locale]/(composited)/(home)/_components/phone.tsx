@@ -40,16 +40,19 @@ export default function Phone({data, phone: {src, alt}}: PhoneProps) {
         const render = () => {
             if (root.current) {
                 const rect = root.current.getBoundingClientRect();
-                progress.current = Math.min(1, window.scrollY / rect.height * 1.25);
-                elements.current.forEach((element, i) => {
-                    const item = data[i];
-                    if (element) {
-                        element.style.opacity = calculate(item.opacity || "1").toString();
-                        element.style.transform = `rotate(${calculate(item.rotate || "0")}deg) ` +
-                            `translateY(${calculate(item.translateY || "0")}px) ` +
-                            `translateX(${calculate(item.translateX || "0")}px)`;
-                    }
-                })
+                const newProgress = Math.min(1, window.scrollY / rect.height * 1.25)
+                if (newProgress !== progress.current) {
+                    progress.current = newProgress;
+                    elements.current.forEach((element, i) => {
+                        const item = data[i];
+                        if (element) {
+                            element.style.opacity = calculate(item.opacity || "1").toString();
+                            element.style.transform = `rotate(${calculate(item.rotate || "0")}deg) ` +
+                                `translateY(${calculate(item.translateY || "0")}px) ` +
+                                `translateX(${calculate(item.translateX || "0")}px)`;
+                        }
+                    })
+                }
             }
             currentFrame = requestAnimationFrame(render);
         }
