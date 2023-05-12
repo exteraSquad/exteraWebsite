@@ -19,8 +19,9 @@ export default function TeamMember({href, name, role, img, buttonText}: TeamMemb
                 src="/images/team/background.png"
                 alt=""
                 className="absolute inset-0 w-full h-full object-cover -z-10 opacity-0 group-hover:opacity-100 duration-300 ease-in-out"
-                width={380}
-                height={507}
+                width={760}
+                height={1014}
+                quality={100}
             />
             <div className="w-full flex-1" />
             <Image src={img} alt={name} className="rounded-full aspect-square mb-6 w-24 md:w-36" width={150} height={150} />
