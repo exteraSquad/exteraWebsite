@@ -15,27 +15,39 @@ export default function Cursor({smoothnessCoefficient = 0.9}: CursorProps) {
     const pullText = useRef<HTMLDivElement>(null);
     const hoveredElement = useRef<Element | null>(null);
     const [light, setLight] = useState(false);
+    const [text, setText] = useState("");
 
     useEffect(() => {
         let currentFrame: number;
         const move = () => {
             hoveredElement.current = document.elementFromPoint(mousePosition.current.x, mousePosition.current.y);
+            const customTextParent = hoveredElement.current?.closest("[data-cursor-text]");
             if (trail.current && pullText.current) {
                 const computedStyle = hoveredElement.current ? getComputedStyle(hoveredElement.current) : null;
                 const cursorStyle = computedStyle?.cursor || "default";
+                const parentBoundingRect = customTextParent?.getBoundingClientRect();
+                const maxParentDimension = Math.max(parentBoundingRect?.width || 0, parentBoundingRect?.height || 0);
 
                 // Trail position
-                trailPosition.current.x = trailPosition.current.x * smoothnessCoefficient + mousePosition.current.x * (1 - smoothnessCoefficient);
-                trailPosition.current.y = trailPosition.current.y * smoothnessCoefficient + mousePosition.current.y * (1 - smoothnessCoefficient);
+                const targetPosition = customTextParent ?
+                    {
+                        x: (parentBoundingRect?.left || 0) + (parentBoundingRect?.width || 0) / 2,
+                        y: (parentBoundingRect?.top || 0) + (parentBoundingRect?.height || 0) / 2
+                    } :
+                    {x: mousePosition.current.x, y: mousePosition.current.y};
+
+                trailPosition.current.x = trailPosition.current.x * smoothnessCoefficient + targetPosition.x * (1 - smoothnessCoefficient);
+                trailPosition.current.y = trailPosition.current.y * smoothnessCoefficient + targetPosition.y * (1 - smoothnessCoefficient);
 
                 trail.current.style.left = trailPosition.current.x + "px";
                 trail.current.style.top = trailPosition.current.y + "px";
 
                 // Trail size
                 const trailSizeTarget =
-                    cursorStyle === "pointer" ? {width: 24, height: 24} :
-                        cursorStyle === "grab" ? {width: 64, height: 64} :
-                            {width: 12, height: 12};
+                    customTextParent ? {width: maxParentDimension + 16, height: maxParentDimension + 16} :
+                        cursorStyle === "pointer" ? {width: 24, height: 24} :
+                            cursorStyle === "grab" ? {width: 64, height: 64} :
+                                {width: 12, height: 12};
 
                 trailSize.current.width = trailSize.current.width * smoothnessCoefficient + trailSizeTarget.width * (1 - smoothnessCoefficient);
                 trailSize.current.height = trailSize.current.height * smoothnessCoefficient + trailSizeTarget.height * (1 - smoothnessCoefficient);
@@ -50,8 +62,17 @@ export default function Cursor({smoothnessCoefficient = 0.9}: CursorProps) {
                 ) || cursorStyle === "grab";
                 setLight(isLight);
 
+                // Text
+                const textTarget = cursorStyle === 'grab' ? 'PULL' :
+                    (customTextParent?.getAttribute("data-cursor-text") || "");
+                console.log(textTarget);
+                const textTargetChanged = textTarget !== text;
+                if (textTargetChanged) {
+                    setText(textTarget);
+                }
+
                 // Pull text opacity
-                const pullOpacityTarget = cursorStyle === "grab" ? 1 : 0;
+                const pullOpacityTarget = textTarget !== '' ? 1 : 0;
                 pullOpacity.current = pullOpacityTarget < 0.001 ? 0 : pullOpacity.current * smoothnessCoefficient + pullOpacityTarget * (1 - smoothnessCoefficient);
 
                 pullText.current.style.opacity = pullOpacity.current + "";
@@ -60,6 +81,12 @@ export default function Cursor({smoothnessCoefficient = 0.9}: CursorProps) {
         }
         currentFrame = requestAnimationFrame(move);
 
+        return () => {
+            cancelAnimationFrame(currentFrame)
+        };
+    }, [smoothnessCoefficient, text]);
+
+    useEffect(() => {
         const mouseMoveHandler = (e: MouseEvent) => {
             mousePosition.current = {
                 x: e.clientX,
@@ -69,11 +96,8 @@ export default function Cursor({smoothnessCoefficient = 0.9}: CursorProps) {
 
         document.addEventListener("mousemove", mouseMoveHandler);
 
-        return () => {
-            cancelAnimationFrame(currentFrame)
-            document.removeEventListener("mousemove", mouseMoveHandler);
-        };
-    }, [smoothnessCoefficient]);
+        return () => document.removeEventListener("mousemove", mouseMoveHandler);
+    }, [])
 
     return (
         <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-50 only-touch:hidden">
@@ -89,7 +113,7 @@ export default function Cursor({smoothnessCoefficient = 0.9}: CursorProps) {
                     <span
                         className={`text-sm font-bold ${light ? "text-primary-500" : "text-primary-100"} transition-colors duration-300 ease-in-out`}
                     >
-                        PULL
+                        {text}
                     </span>
                 </div>
             </div>

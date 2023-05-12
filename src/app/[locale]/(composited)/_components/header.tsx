@@ -29,10 +29,18 @@ export default function Header() {
                     <div className="absolute top-8 right-8 md:hidden w-8">
                         <CloseCircle size={32}/>
                     </div>
-                    <HomeLink href="#team" className="text-black hover:text-neutral-800 transition-colors">
+                    <HomeLink
+                        href="#team"
+                        className="text-black"
+                        data-cursor-text={t('team')}
+                    >
                         {t('team')}
                     </HomeLink>
-                    <HomeLink href="#features" className="text-black hover:text-neutral-800 transition-colors">
+                    <HomeLink
+                        href="#features"
+                        className="text-black"
+                        data-cursor-text={t('features')}
+                    >
                         {t('features')}
                     </HomeLink>
                     <HomeLink

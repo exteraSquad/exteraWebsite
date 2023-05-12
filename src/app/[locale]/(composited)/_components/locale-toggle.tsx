@@ -21,6 +21,7 @@ export default function LocaleToggle({currentLocale}: {currentLocale: string}) {
                                     (locale === currentLocale ? " underline decoration-4 underline-offset-8 text-primary-500"
                                         : ""
                                     )}
+                                data-cursor-text={locale.toUpperCase()}
                             >
                                 {locale}
                             </Link>
