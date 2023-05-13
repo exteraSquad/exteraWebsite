@@ -26,22 +26,26 @@ export default function Footer() {
                 <div className="flex flex-col gap-8 lg:gap-4 items-center lg:items-start w-full max-w-xs">
                     <FooterLink
                         href="/#download"
-                        text={t('download')}
-                    />
+                    >
+                        {t('download')}
+                    </FooterLink>
                     <FooterLink
                         href="/legal/privacy"
-                        text={t('privacy')}
-                    />
+                    >
+                        {t('privacy')}
+                    </FooterLink>
                 </div>
                 <div className="flex flex-col gap-8 lg:gap-4 items-center lg:items-start w-full max-w-xs">
                     <FooterLink
                         href="https://github.com/exteraSquad"
-                        text={t('source')}
-                    />
+                    >
+                        {t('source')}
+                    </FooterLink>
                     <FooterLink
                         href="https://t.me/exteraChat"
-                        text={t('chats')}
-                    />
+                    >
+                        {t('chats')}
+                    </FooterLink>
                 </div>
                 <Link
                     href="#top"
