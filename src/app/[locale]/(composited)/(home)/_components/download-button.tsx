@@ -1,5 +1,5 @@
 import {ReactNode} from "react";
-import Link from "@/app/[locale]/_components/localised-link";
+import Link from "@/app/[locale]/_components/link";
 
 export type DownloadButtonProps = {
     disabled?: boolean,

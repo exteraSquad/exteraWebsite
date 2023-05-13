@@ -2,7 +2,7 @@ import Image from "next/image";
 import logo from "@/app/logo.png";
 import SplashText from "@/app/[locale]/(composited)/_components/splash-text";
 import FooterLink from "@/app/[locale]/(composited)/_components/footer-link";
-import Link from "@/app/[locale]/_components/localised-link";
+import Link from "@/app/[locale]/_components/link";
 import {SquareArrowUp} from "solar-icon-set";
 import {useTranslations} from "next-intl";
 import {default as splashes} from "@/data/splashes.json";
@@ -25,7 +25,7 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-col gap-8 lg:gap-4 items-center lg:items-start w-full max-w-xs">
                     <FooterLink
-                        href="#download"
+                        href="/#download"
                         text={t('download')}
                     />
                     <FooterLink

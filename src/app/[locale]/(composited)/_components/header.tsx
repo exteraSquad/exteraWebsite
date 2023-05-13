@@ -1,7 +1,6 @@
-import Link from "@/app/[locale]/_components/localised-link";
+import Link from "@/app/[locale]/_components/link";
 import {CloseCircle, HamburgerMenu} from "solar-icon-set";
 import {useLocale, useTranslations} from "next-intl";
-import HomeLink from "@/app/[locale]/(composited)/_components/home-link";
 import LocaleToggle from "@/app/[locale]/(composited)/_components/locale-toggle";
 import Button from "@/app/[locale]/_components/button";
 import Marquee from "@/app/[locale]/_components/marquee";
@@ -29,22 +28,22 @@ export default function Header() {
                     <div className="absolute top-8 right-8 md:hidden w-8">
                         <CloseCircle size={32}/>
                     </div>
-                    <HomeLink
-                        href="#team"
+                    <Link
+                        href="/#team"
                         className="text-black"
                         data-cursor-text={t('team')}
                     >
                         {t('team')}
-                    </HomeLink>
-                    <HomeLink
-                        href="#features"
+                    </Link>
+                    <Link
+                        href="/#features"
                         className="text-black"
                         data-cursor-text={t('features')}
                     >
                         {t('features')}
-                    </HomeLink>
-                    <HomeLink
-                        href="#download"
+                    </Link>
+                    <Link
+                        href="/#download"
                         className="hidden md:block"
                     >
                         <Button className="w-14 overflow-hidden md:w-48 word-spacing-6 px-[0!important]">
@@ -52,10 +51,10 @@ export default function Header() {
                                 {t('download')}
                             </Marquee>
                         </Button>
-                    </HomeLink>
-                    <HomeLink href="#download" className="md:hidden">
+                    </Link>
+                    <Link href="/#download" className="md:hidden">
                         {t('download')}
-                    </HomeLink>
+                    </Link>
                     <Link href="/legal/privacy" className="md:hidden">
                         {t('privacy')}
                     </Link>

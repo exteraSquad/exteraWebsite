@@ -1,5 +1,5 @@
 import {useTranslations} from "next-intl";
-import Link from "@/app/[locale]/_components/localised-link";
+import Link from "@/app/[locale]/_components/link";
 import IconCanvas from "@/app/[locale]/_components/icon-canvas";
 import Image from "next/image";
 import DragSlider from "@/app/[locale]/_components/drag-slider";
@@ -34,7 +34,7 @@ export default function Home() {
                 <h1 className="text-primary-500 font-bold font-display text-5xl md:text-6xl lg:text-7xl">{t("title")}</h1>
                 <p className="text-xl md:text-2xl text-neutral-800 w-full md:w-[30rem] text-center">{t("description")}</p>
                 <Link
-                    href="#download"
+                    href="/#download"
                     className="md:hidden"
                 >
                     <Button>
@@ -89,7 +89,7 @@ export default function Home() {
                             content: (
                                 <div className="flex flex-col items-center gap-8 justify-center w-full h-full">
                                     <Link
-                                        href="#more"
+                                        href="/#more"
                                         role="button"
                                         className="w-32 h-32 aspect-square hover:bg-primary-500 flex-col hover:text-primary-50
                                         rounded-full bg-white text-primary-500 flex justify-center items-center transition-colors
@@ -161,7 +161,7 @@ export default function Home() {
                         {t("more.description")}
                     </p>
                     <Link
-                        href="#download"
+                        href="/#download"
                     >
                         <Button>
                             {t('more.download')}

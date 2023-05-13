@@ -1,4 +1,4 @@
-import Link from "@/app/[locale]/_components/localised-link";
+import Link from "@/app/[locale]/_components/link";
 import Image from "next/image";
 
 export type TeamMemberProps = {
