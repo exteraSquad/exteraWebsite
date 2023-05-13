@@ -65,7 +65,6 @@ export default function Cursor({smoothnessCoefficient = 0.9}: CursorProps) {
                 // Text
                 const textTarget = cursorStyle === 'grab' ? 'PULL' :
                     (customTextParent?.getAttribute("data-cursor-text") || "");
-                console.log(textTarget);
                 const textTargetChanged = textTarget !== text;
                 if (textTargetChanged) {
                     setText(textTarget);
