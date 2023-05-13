@@ -1,9 +1,10 @@
 import Link from "@/app/[locale]/_components/link";
-import {CloseCircle, HamburgerMenu} from "solar-icon-set";
 import {useLocale, useTranslations} from "next-intl";
 import LocaleToggle from "@/app/[locale]/(composited)/_components/locale-toggle";
 import Button from "@/app/[locale]/_components/button";
 import Marquee from "@/app/[locale]/_components/marquee";
+import HeaderLink from "@/app/[locale]/(composited)/_components/header-link";
+import HeaderMenu from "@/app/[locale]/(composited)/_components/header-menu";
 
 export default function Header() {
     const currentLocale = useLocale();
@@ -14,58 +15,43 @@ export default function Header() {
             className="flex justify-between items-center mb-16 font-display font-bold text-2xl sticky top-0 py-4 md:py-8
             bg-white px-8 md:px-16 z-40"
         >
-            <LocaleToggle currentLocale={currentLocale} />
-            <label>
-                <input type="checkbox" className="hidden peer" id="menu"/>
-                <div className="md:hidden cursor-pointer">
-                    <HamburgerMenu size={32}/>
-                </div>
-                <nav
-                    className="hidden md:flex peer-checked:flex items-center gap-8 fixed md:static inset-0 w-screen
-                    md:w-auto h-screen md:h-auto flex-col md:flex-row justify-center md:bg-transparent bg-white
-                    text-center"
+            <LocaleToggle currentLocale={currentLocale}/>
+            <HeaderMenu>
+                <HeaderLink
+                    href="/#team"
+                    data-cursor-text={t('team')}
                 >
-                    <div className="absolute top-8 right-8 md:hidden w-8">
-                        <CloseCircle size={32}/>
-                    </div>
-                    <Link
-                        href="/#team"
-                        className="text-black"
-                        data-cursor-text={t('team')}
-                    >
-                        {t('team')}
-                    </Link>
-                    <Link
-                        href="/#features"
-                        className="text-black"
-                        data-cursor-text={t('features')}
-                    >
-                        {t('features')}
-                    </Link>
-                    <Link
-                        href="/#download"
-                        className="hidden md:block"
-                    >
-                        <Button className="w-14 overflow-hidden md:w-48 word-spacing-6 px-[0!important]">
-                            <Marquee repeatCount={2}>
-                                {t('download')}
-                            </Marquee>
-                        </Button>
-                    </Link>
-                    <Link href="/#download" className="md:hidden">
-                        {t('download')}
-                    </Link>
-                    <Link href="/legal/privacy" className="md:hidden">
-                        {t('privacy')}
-                    </Link>
-                    <Link href="https://github.com/exteraSquad" className="md:hidden">
-                        {t('source')}
-                    </Link>
-                    <Link href="https://t.me/exteraChat" className="md:hidden">
-                        {t('chats')}
-                    </Link>
-                </nav>
-            </label>
+                    {t('team')}
+                </HeaderLink>
+                <HeaderLink
+                    href="/#features"
+                    data-cursor-text={t('features')}
+                >
+                    {t('features')}
+                </HeaderLink>
+                <Link
+                    href="/#download"
+                    className="hidden md:block"
+                >
+                    <Button className="w-14 overflow-hidden md:w-48 word-spacing-6 px-[0!important]">
+                        <Marquee repeatCount={2}>
+                            {t('download')}
+                        </Marquee>
+                    </Button>
+                </Link>
+                <HeaderLink href="/#download" mobile>
+                    {t('download')}
+                </HeaderLink>
+                <HeaderLink href="/legal/privacy" mobile>
+                    {t('privacy')}
+                </HeaderLink>
+                <HeaderLink href="https://github.com/exteraSquad" mobile>
+                    {t('source')}
+                </HeaderLink>
+                <HeaderLink href="https://t.me/exteraChat" mobile>
+                    {t('chats')}
+                </HeaderLink>
+            </HeaderMenu>
         </header>
     )
 }
