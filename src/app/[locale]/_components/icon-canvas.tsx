@@ -75,6 +75,10 @@ export type IconCanvasProps = {
      * Height of the canvas in pixels.
      */
     height?: number;
+    /**
+     * Minimum amount of icons that should be on the canvas at any given time.
+     */
+    minIcons?: number;
 }
 
 export default function IconCanvas(
@@ -97,6 +101,7 @@ export default function IconCanvas(
         maxOpacity = 64,
         color = "#000000",
         height,
+        minIcons = 32
     }: IconCanvasProps
 ) {
     const canvas = useRef<HTMLCanvasElement>(null);
@@ -112,8 +117,9 @@ export default function IconCanvas(
         if (lastFrameTime.current) {
             const delta = time - lastFrameTime.current;
             ctx.clearRect(0, 0, canvas.current.width, canvas.current.height);
+            const lacksIcons = icons.current.length < minIcons;
 
-            if (Math.random() > (1 - probability)) {
+            if (Math.random() > (1 - probability) || lacksIcons) {
                 const scale = Math.random() * (maxScale - minScale) + minScale;
                 const t = Math.random();
                 const n = t > 0.3 && t < 0.5 ? 0.3 : t < 0.7 && t > 0.5 ? 0.7 : t;
@@ -123,7 +129,7 @@ export default function IconCanvas(
                 icons.current.push({
                     pos: {
                         x,
-                        y: c.height + scale * 24,
+                        y: lacksIcons ? Math.random() * c.height : c.height + scale * 24,
                     },
                     velocity: {
                         y: Math.random() * (maxYVelocity - minYVelocity) + minYVelocity,
@@ -187,6 +193,7 @@ export default function IconCanvas(
         minYVelocity,
         paths,
         probability,
+        minIcons
     ])
     const resize = useCallback(() => {
         if (!canvas.current) return;
