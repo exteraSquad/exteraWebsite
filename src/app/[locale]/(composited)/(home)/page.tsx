@@ -61,7 +61,7 @@ export default function Home() {
                 lg:flex-row rounded-4xl lg:rounded-6xl lg:h-[28rem] mt-64 sm:p-12 sm:pt-16 gap-12 p-4 pt-12 mx-offset md:o-16"
                 id="features"
             >
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4 justify-center">
                     <h3 className="font-bold font-display text-5xl lg:text-6xl 2xl:text-8xl text-center lg:text-left">
                         {t("features.title")}
                     </h3>
