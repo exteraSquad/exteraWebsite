@@ -75,13 +75,14 @@ export default function FeaturesOverview({features, className, smoothnessCoeffic
                 ))}
                 <div className="min-w-full h-full" />
             </div>
-            <div className="flex flex-row overflow-hidden px-6 lg:px-10 flex-1" ref={contents}>
+            <div className="flex flex-row overflow-hidden px-6 lg:px-10 flex-1 gap-14" ref={contents}>
                 {features.map(({content}, i) => (
                     <div key={i} className="min-w-full">
                         {content}
                     </div>
                 ))}
             </div>
+            <div className="absolute inset-x-0 bottom-0 top-autp w-full h-48 bg-gradient-to-t from-primary-100 to-transparent pointer-events-none rounded-b-3xl" />
             <div className="absolute flex flex-row gap-2 p-3 rounded-full mx-auto bg-neutral-900 bottom-8 lg:-bottom-16 w-fit left-1/2 -translate-x-1/2">
                 {features.map((_, i) => (
                     <button
