@@ -6,6 +6,7 @@
       "width": 1024,
       "height": 750
     },
+    "icon": "Pallete2",
     "note": true
   },
   {
@@ -14,6 +15,7 @@
       "src": "/images/features/ui.png",
       "width": 1024,
       "height": 767
-    }
+    },
+    "icon": "Widget2"
   }
 ]

@@ -7,7 +7,6 @@ import DownloadButton from "@/app/[locale]/(composited)/(home)/_components/downl
 import TeamMember from "@/app/[locale]/(composited)/(home)/_components/team-member";
 import FeaturesOverview from "@/app/[locale]/(composited)/(home)/_components/features-overview";
 import Phone from "@/app/[locale]/(composited)/(home)/_components/phone";
-import {SquareArrowDown} from "solar-icon-set";
 import {checkedIcons} from "@/loaders/icons";
 import Button from "@/app/[locale]/_components/button";
 import Marquee from "@/app/[locale]/_components/marquee";
@@ -19,6 +18,10 @@ import {default as team} from "@/data/team.json";
 import {default as downloads} from "@/data/downloads.json";
 import {localisePath} from "@/loaders/path";
 import {unsafelyLoadSVG} from "@/loaders/svg";
+import {SquareArrowDown} from "solar-icon-set";
+import * as icons from "solar-icon-set";
+import {ComponentType} from "react";
+import {IconProps} from "solar-icon-set/dist/types";
 
 export default function Home() {
     const t = useTranslations('home');
@@ -109,36 +112,47 @@ export default function Home() {
                 border-neutral-100 rounded-4xl md:rounded-6xl bg-white md:o-16 o-4 mx-offset w-full-no-offset"
                 id="more"
             >
-                {moreFeatures.map(({img, id, note}, i) => (
-                    <figure
-                        className={"flex w-full justify-between gap-24 items-center flex-col-reverse " +
-                            (i % 2 ? 'md:flex-row-reverse' : 'md:flex-row')}
-                        key={i}
-                    >
-                        <Image
-                            src={localisePath(img.src)}
-                            alt={t("more." + id + ".alt")}
-                            width={img.width}
-                            height={img.height}
-                            quality={100}
-                            className="w-full md:w-5/12 h-auto"
-                        />
-                        <figcaption
-                            className="flex flex-col justify-center gap-1 text-center md:text-left md:w-7/12 h-fit">
-                            {note &&
-                                <p className="text-neutral-400 text-lg">
-                                    {t("more." + id + ".note")}
+                {moreFeatures.map(({img, id, note, icon}, i) => {
+                    const Icon: ComponentType<IconProps> = icons.hasOwnProperty(icon) ?  (icons as any)[icon] : null;
+                    return (
+                        <figure
+                            className={"flex w-full justify-between gap-8 md:gap-24 items-center flex-col-reverse " +
+                                (i % 2 ? 'md:flex-row-reverse' : 'md:flex-row')}
+                            key={i}
+                        >
+                            <Image
+                                src={localisePath(img.src)}
+                                alt={t("more." + id + ".alt")}
+                                width={img.width}
+                                height={img.height}
+                                quality={100}
+                                className="w-full md:w-5/12 h-auto"
+                            />
+                            <figcaption
+                                className="flex flex-col justify-center gap-1 text-center md:text-left md:w-7/12 h-fit">
+                                {Icon && (
+                                    <div
+                                        className="flex justify-center p-4 rounded-full bg-primary-500 text-white w-min
+                                        h-min items-center mx-auto md:mx-0 mb-4"
+                                    >
+                                        <Icon iconStyle="Bold" size={40} />
+                                    </div>
+                                )}
+                                {note &&
+                                    <p className="text-neutral-400 text-lg">
+                                        {t("more." + id + ".note")}
+                                    </p>
+                                }
+                                <h3 className="font-bold font-display text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl">
+                                    {t("more." + id + ".title")}
+                                </h3>
+                                <p className="text-neutral-800 text-lg md:text-xl xl:text-2xl mt-4 md:mt-6">
+                                    {t("more." + id + ".description")}
                                 </p>
-                            }
-                            <h3 className="font-bold font-display text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl">
-                                {t("more." + id + ".title")}
-                            </h3>
-                            <p className="text-neutral-800 text-lg md:text-xl xl:text-2xl mt-4 md:mt-6">
-                                {t("more." + id + ".description")}
-                            </p>
-                        </figcaption>
-                    </figure>
-                ))}
+                            </figcaption>
+                        </figure>
+                    )
+                })}
                 <figure className="flex flex-col gap-4 lg:gap-6 items-center">
                     <h3 className="font-bold font-display text-4xl lg:text-7xl text-center">
                         {t("more.title")}
