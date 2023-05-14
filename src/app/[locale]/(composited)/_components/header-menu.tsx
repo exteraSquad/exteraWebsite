@@ -1,7 +1,9 @@
 "use client";
 
 import {createContext, ReactNode, useState} from "react";
-import {CloseCircle, HamburgerMenu} from "solar-icon-set";
+import CloseIcon from "@/app/[locale]/(composited)/_assets/ic_close.svg";
+import OpenIcon from "@/app/[locale]/(composited)/_assets/ic_menu.svg";
+import Image from "next/image";
 
 export const MenuContext = createContext({
     open: false,
@@ -17,7 +19,7 @@ export default function HeaderMenu({children}: { children: ReactNode }) {
             setOpen
         }}>
             <div className="md:hidden cursor-pointer" onClick={() => setOpen(true)}>
-                <HamburgerMenu size={32}/>
+                <Image src={OpenIcon} alt="Open menu" width={32} height={32} />
             </div>
             <nav
                 className={`flex md:opacity-100 items-center md:bg-transparent fixed md:static gap-8 md:text-2xl text-4xl 
@@ -25,7 +27,7 @@ export default function HeaderMenu({children}: { children: ReactNode }) {
                 ${open ? 'translate-y-0' : '-translate-y-full'} md:translate-y-0 transition-transform duration-700 ease-in-out`}
             >
                 <div className="absolute top-4 right-8 md:hidden cursor-pointer" onClick={() => setOpen(false)}>
-                    <CloseCircle size={32} />
+                    <Image src={CloseIcon} alt="Close menu" width={32} height={32} />
                 </div>
                 {children}
             </nav>
