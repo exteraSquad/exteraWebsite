@@ -21,7 +21,7 @@ export default function HeaderLink({href, children, mobile = false, ...props}: H
             {...props}
         >
             <div
-                className={`md:translate-y-0 ${open ? 'translate-y-0' : 'translate-y-12'} transition-transform duration-700 
+                className={`md:translate-y-0 ${open ? 'translate-y-0' : 'translate-y-full'} transition-transform duration-700 
                 ease-in-out delay-700`}
             >
                 {children}
