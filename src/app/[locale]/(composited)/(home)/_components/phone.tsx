@@ -62,7 +62,7 @@ export default function Phone({data, phone: {src, alt}}: PhoneProps) {
     }, [data])
 
     return (
-        <div ref={root} className="relative my-32">
+        <div ref={root} className="relative my-32 md:my-48 lg:my-64">
             <div className="hidden md:contents">
                 {data.map((item, i) =>
                     <Image

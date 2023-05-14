@@ -28,7 +28,7 @@ export default function Home() {
 
     return (
         <>
-            <IconCanvas probability={0.02} paths={checkedIcons} color="#F54142" height={1700}/>
+            <IconCanvas probability={0.02} paths={checkedIcons} color="#F54142" height={2000}/>
 
             <section className="w-full flex justify-center items-center flex-col gap-4 mt-48 md:mt-72 mb-16 px-4" id="top">
                 <h1 className="text-primary-500 font-bold font-display text-5xl md:text-6xl lg:text-7xl">{t("title")}</h1>
