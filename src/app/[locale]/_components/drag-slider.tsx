@@ -4,13 +4,9 @@ import {ReactNode, useCallback, useEffect, useRef, useState} from "react";
 
 export type DragSliderProps = {
     children: ReactNode;
-    buttonHeight?: {
-        top: number;
-        bottom: number;
-    }
 }
 
-export default function DragSlider({children, buttonHeight}: DragSliderProps) {
+export default function DragSlider({children}: DragSliderProps) {
     const [dragged, setDragged] = useState(false);
     const root = useRef<HTMLDivElement>(null);
     const currentTouch = useRef<{ x: number, y: number } | null>(null);
@@ -18,12 +14,12 @@ export default function DragSlider({children, buttonHeight}: DragSliderProps) {
     const accX = useRef(0);
     const decelerationCoefficient = useRef(0.92);
 
-    const startDrag = useCallback((pageY: number) => {
+    const startDrag = useCallback((x: number, y: number) => {
         if (!root.current) return;
-        const top = root.current.getBoundingClientRect().y - document.body.getBoundingClientRect().y;
-        if (buttonHeight && top + buttonHeight.top < pageY && pageY < top + buttonHeight.bottom) return;
+        const clickedElement = document.elementFromPoint(x, y);
+        if (clickedElement?.closest("[data-drag-slider-ignore]")) return;
         setDragged(true)
-    }, [buttonHeight])
+    }, [])
     const stopDrag = useCallback(() => {
         setDragged(false);
         currentTouch.current = null;
@@ -55,10 +51,11 @@ export default function DragSlider({children, buttonHeight}: DragSliderProps) {
             ${dragged ? 'cursor-grabbing' : 'cursor-grab'}`}
 
             onMouseDown={e => {
-                startDrag(e.pageY)
+                startDrag(e.clientX, e.clientY);
             }}
             onTouchStart={e => {
-                startDrag(e.touches[0].pageY)
+                const touch = e.touches[0];
+                startDrag(touch.clientX, touch.clientY);
             }}
 
             onMouseUp={stopDrag}

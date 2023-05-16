@@ -185,10 +185,7 @@ export default function Home() {
 
             <section className="w-full flex justify-center items-center flex-col gap-16 mb-32">
                 <h2 id="team" className="font-display font-bold text-5xl lg:text-7xl text-center">{t("team.title")}</h2>
-                <DragSlider buttonHeight={{
-                    top: 410,
-                    bottom: 495
-                }}>
+                <DragSlider>
                     {
                         team.map(({img, ...member}, i) => (
                             <TeamMember

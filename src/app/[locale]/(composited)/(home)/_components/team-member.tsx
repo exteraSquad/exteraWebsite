@@ -34,6 +34,7 @@ export default function TeamMember({href, name, role, img, buttonText}: TeamMemb
                 items-center duration-300 ease-in-out"
                 href={href}
                 target="_blank"
+                data-drag-slider-ignore
             >
                 {buttonText}
             </Link>
