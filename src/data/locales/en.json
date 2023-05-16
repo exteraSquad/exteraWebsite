@@ -39,19 +39,19 @@
       "description": "We are working hard to make exteraGram the best Telegram client for Android.",
       "theme": {
         "title": "Dynamic Theme",
-        "description": "exteraGram has the best monet engine among all the clients! It's possible due to the great work that our designers made",
+        "description": "exteraGram has the best Monet themes among all the clients! It's possible due to the great work that our designers made",
         "note": "*for Android 12 and higher",
         "alt": "Demonstration of monet themes"
       },
       "ui": {
-        "title": "Interface Customization",
-        "description": "Minimalistic MD3 design is carefully implemented into default telegram UI",
+        "title": "Modern Interface",
+        "description": "A fresh modern look using standard Telegram Design and Material Design 3",
         "alt": "Demonstration of wide variety of UI customization settings"
       },
       "download": "Download"
     },
     "team": {
-      "title": "The Team",
+      "title": "Our Team",
       "contact": "Contact"
     },
     "download": {
