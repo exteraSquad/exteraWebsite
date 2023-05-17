@@ -73,6 +73,10 @@ export async function generateMetadata(): Promise<Metadata> {
         generator: "Next.js",
         colorScheme: "light",
         themeColor: "#F54142",
+        icons: {
+            icon: '/favicon.ico',
+            shortcut: '/favicon.ico',
+        },
         openGraph: {
             type: "website",
             locale: locale,
