@@ -214,6 +214,6 @@ export default function IconCanvas(
     ])
 
     return (
-        <canvas ref={canvas} className="absolute pointer-events-none top-0 left-0 -z-10" />
+        <canvas ref={canvas} className="absolute pointer-events-none top-0 left-0 -z-10 max-w-full" />
     )
 }
