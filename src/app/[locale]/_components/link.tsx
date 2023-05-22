@@ -21,7 +21,7 @@ export default function Link(
         <IntlLink href={href} className={(underline ? (className || "") + " group" : className)} {...props}>
             {children}
             {underline &&
-                <div className="w-full scale-x-0 group-hover:scale-x-100 h-1 mt-1 rounded-full bg-red-500 transition-transform duration-300 ease-in-out" />
+                <div className="w-full scale-x-0 group-hover:scale-x-100 h-1 mt-1 rounded-full bg-primary-500 transition-transform duration-300 ease-in-out" />
             }
         </IntlLink>
     )
