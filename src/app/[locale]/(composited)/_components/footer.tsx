@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "@/app/logo.png";
+import logo from "@/app/[locale]/_assets/logos/logo.png";
 import SplashText from "@/app/[locale]/(composited)/_components/splash-text";
 import FooterLink from "@/app/[locale]/(composited)/_components/footer-link";
 import Link from "@/app/[locale]/_components/link";

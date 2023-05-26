@@ -2,7 +2,7 @@ import { remark } from 'remark';
 import html from 'remark-html';
 import policy from "@/data/privacy-policy.md"
 import {Database, ShieldUser} from "solar-icon-set";
-import logo from "@/app/logo.svg";
+import logo from "@/app/[locale]/_assets/logos/logo.svg";
 import Image from "next/image";
 import {Metadata} from "next";
 

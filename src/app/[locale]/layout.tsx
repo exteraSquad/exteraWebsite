@@ -1,4 +1,4 @@
-import '@/app/globals.css'
+import '@/app/[locale]/_assets/globals.css'
 import React, {ReactNode} from "react";
 import localFont from "next/font/local";
 import {useLocale} from 'next-intl';
@@ -9,22 +9,22 @@ import {Metadata} from "next";
 import Cursor from "@/app/[locale]/_components/cursor";
 
 const calSans = localFont({
-    src: '../fonts/CalSans-SemiBold.woff2',
+    src: '_assets/fonts/CalSans-SemiBold.woff2',
     variable: '--font-cal-sans',
     display: "swap"
 })
 const onest = localFont({
     src: [
         {
-            path: '../fonts/Onest-Regular.woff',
+            path: '_assets/fonts/Onest-Regular.woff',
             weight: '400',
         },
         {
-            path: '../fonts/Onest-Medium.woff',
+            path: '_assets/fonts/Onest-Medium.woff',
             weight: '500',
         },
         {
-            path: '../fonts/Onest-Bold.woff',
+            path: '_assets/fonts/Onest-Bold.woff',
             weight: '700'
         }
     ],
