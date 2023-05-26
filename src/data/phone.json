@@ -1,9 +1,9 @@
 {
-  "phone": "/images/phone/phone.png",
+  "phone": "/images/phone/{locale}/phone.png",
   "elements": [
     {
       "id": "emojis",
-      "src": "/images/phone/emojis.png",
+      "src": "/images/phone/common/emojis.png",
       "top": 144,
       "z": -10,
       "width": 272,
@@ -13,7 +13,7 @@
     },
     {
       "id": "update",
-      "src": "/images/phone/update.png",
+      "src": "/images/phone/{locale}/update.png",
       "top": 256,
       "z": -10,
       "width": 250,
@@ -23,7 +23,7 @@
     },
     {
       "id": "speed",
-      "src": "/images/phone/speed.png",
+      "src": "/images/phone/{locale}/speed.png",
       "width": 272,
       "height": 120,
       "z": -10,
@@ -32,7 +32,7 @@
     },
     {
       "id": "icons",
-      "src": "/images/phone/icons.png",
+      "src": "/images/phone/common/icons.png",
       "top": 384,
       "z": 10,
       "width": 190,
@@ -43,7 +43,7 @@
     },
     {
       "id": "settings",
-      "src": "/images/phone/settings.png",
+      "src": "/images/phone/common/settings.png",
       "top": 192,
       "z": 10,
       "width": 268,

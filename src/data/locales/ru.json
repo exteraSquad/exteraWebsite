@@ -48,6 +48,21 @@
         "description": "Свежий современный вид с использованием стандартного дизайна Telegram и Material Design 3",
         "alt": "Демонстрация широкого спектра настроек пользовательского интерфейса"
       },
+      "design": {
+        "title": "Великолепный дизайн",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
+        "alt": "Демонстрация улучшений дизайна приложения"
+      },
+      "speed": {
+        "title": "Увеличение скорости загрузки",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
+        "alt": "Демонстрация настроек ускорения загрузки и отправки"
+      },
+      "camera": {
+        "title": "Лучшая камера",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
+        "alt": "Демонстрация улучшеного экрана камеры"
+      },
       "download": "Скачать"
     },
     "team": {

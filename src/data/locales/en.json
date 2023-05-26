@@ -48,6 +48,21 @@
         "description": "A fresh modern look using standard Telegram Design and Material Design 3",
         "alt": "Demonstration of wide variety of UI customization settings"
       },
+      "design": {
+        "title": "Marvelous Design",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
+        "alt": "Demonstration of app design improvements"
+      },
+      "speed": {
+        "title": "Download Speed Boost",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
+        "alt": "Demonstration of settings that allow you to boost download and upload speed"
+      },
+      "camera": {
+        "title": "The best camera",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
+        "alt": "Demonstration of improved camera screen"
+      },
       "download": "Download"
     },
     "team": {

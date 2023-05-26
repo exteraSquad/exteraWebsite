@@ -2,20 +2,47 @@
   {
     "id": "theme",
     "img": {
-      "src": "/images/features/theme.png",
+      "src": "/images/features/common/theme.png",
       "width": 1024,
       "height": 750
     },
-    "icon": "Pallete2",
+    "icon": "@Pallete2",
     "note": true
   },
   {
     "id": "ui",
     "img": {
-      "src": "/images/features/ui.png",
+      "src": "/images/features/{locale}/ui.png",
       "width": 1024,
       "height": 767
     },
-    "icon": "Widget2"
+    "icon": "@Widget2"
+  },
+  {
+    "id": "design",
+    "img": {
+      "src": "/images/features/{locale}/design.png",
+      "width": 1024,
+      "height": 688
+    },
+    "icon": "/images/features/ic_gaze.svg"
+  },
+  {
+    "id": "speed",
+    "img": {
+      "src": "/images/features/{locale}/speed.png",
+      "width": 1024,
+      "height": 686
+    },
+    "icon": "@DownloadTwiceSquare"
+  },
+  {
+    "id": "camera",
+    "img": {
+      "src": "/images/features/{locale}/camera.png",
+      "width": 800,
+      "height": 600
+    },
+    "icon": "/images/features/ic_camera.svg"
   }
 ]

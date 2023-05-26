@@ -113,7 +113,8 @@ export default function Home() {
                 id="more"
             >
                 {moreFeatures.map(({img, id, note, icon}, i) => {
-                    const Icon: ComponentType<IconProps> = icons.hasOwnProperty(icon) ?  (icons as any)[icon] : null;
+                    const Icon: ComponentType<IconProps> = icon.startsWith('@') && icons.hasOwnProperty(icon.slice(1)) ?
+                        (icons as any)[icon.slice(1)] : ({size}: {size: number}) => <Image src={icon} alt={id} width={size} height={size} />
                     return (
                         <figure
                             className={"flex w-full justify-between gap-8 md:gap-24 items-center flex-col-reverse " +
