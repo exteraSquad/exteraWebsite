@@ -40,8 +40,8 @@
     "id": "camera",
     "img": {
       "src": "/images/features/{locale}/camera.png",
-      "width": 800,
-      "height": 600
+      "width": 1024,
+      "height": 800
     },
     "icon": "/images/features/ic_camera.svg"
   }
