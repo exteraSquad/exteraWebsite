@@ -10,10 +10,11 @@ module.exports = withNextIntl({
     },
     images: {
         remotePatterns: [
-          {
-            protocol: 'https',
-            hostname: 'avatars.githubusercontent.com',
-          },
+            {
+                protocol: 'https',
+                hostname: 'avatars.githubusercontent.com',
+            },
         ],
+        dangerouslyAllowSVG: true
     }
 });
