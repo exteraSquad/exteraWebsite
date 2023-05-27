@@ -20,47 +20,47 @@
     "phone": {
       "phone": "Phone with exteraGram settings open",
       "emojis": "Panel with default and custom emojis",
-      "update": "Menu with update options",
+      "update": "Menu with on-the-air update options",
       "speed": "Settings for boosting media upload and download speed",
       "icons": "Various icons",
       "settings": "Various settings available"
     },
     "features": {
       "title": "Features",
-      "description": "Take a look at a list of features we have!",
-      "settings": "Lots of \nsettings",
+      "description": "Take a look at the list of features that make our client special!",
+      "settings": "Lots of\n settings",
       "music": "Reworked\n player",
       "customization": "Interface\n customization",
-      "more": "Discover\n all of the features",
+      "more": "Discover\n more features",
       "button": "Press me!"
     },
     "more": {
       "title": "And much much more",
-      "description": "We are working hard to make exteraGram the best Telegram client for Android.",
+      "description": "We are working hard to improve our client.",
       "theme": {
         "title": "Dynamic Theme",
-        "description": "exteraGram has the best Monet themes among all the clients! It's possible due to the great work that our designers made",
+        "description": "Experience exteraGram with the best Material You theme among all Telegram clients, made possible by the amazing work our designers made.",
         "note": "*for Android 12 and higher",
         "alt": "Demonstration of monet themes"
       },
       "ui": {
         "title": "Modern Interface",
-        "description": "A fresh modern look using standard Telegram Design and Material Design 3",
+        "description": "Use large variety of settings provided by exteraGram to customise your app's look and feel.",
         "alt": "Demonstration of wide variety of UI customization settings"
       },
       "design": {
         "title": "Marvelous Design",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
+        "description": "Enjoy a fresh modern look using Telegram's design system, Google's Material 3 and custom icons.",
         "alt": "Demonstration of app design improvements"
       },
       "speed": {
         "title": "Download Speed Boost",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
+        "description": "Improve media download and upload speeds using our experimental speed boost feature.",
         "alt": "Demonstration of settings that allow you to boost download and upload speed"
       },
       "camera": {
-        "title": "The best camera",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
+        "title": "The Best Camera",
+        "description": "Use our imporved and configurable camera to take amazing shots right from the app.",
         "alt": "Demonstration of improved camera screen"
       },
       "download": "Download"
@@ -79,12 +79,12 @@
   },
   "errors": {
     "notFound": {
-      "description": "the page you are looking for is 100% absolutely non-existent",
+      "description": "The page you are looking for is 100% absolutely non-existent",
       "button": "Home"
     }
   },
   "meta": {
-    "fullTitle": "exteraGram – next generation telegram client",
+    "fullTitle": "exteraGram – custom Telegram client",
     "title": "exteraGram",
     "description": "Next generation Telegram client for Android, made by exteraSquad."
   }
