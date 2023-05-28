@@ -114,7 +114,7 @@ export default function Home() {
             >
                 {moreFeatures.map(({img, id, note, icon}, i) => {
                     const Icon: ComponentType<IconProps> = icon.startsWith('@') && icons.hasOwnProperty(icon.slice(1)) ?
-                        (icons as any)[icon.slice(1)] : ({size}: {size: number}) => <Image src={icon} alt={id} width={size} height={size} className="min-w-[40px]" />
+                        (icons as any)[icon.slice(1)] : () => unsafelyLoadSVG(localisePath(icon))
                     return (
                         <figure
                             className={"flex w-full justify-between gap-8 md:gap-24 items-center flex-col-reverse " +
