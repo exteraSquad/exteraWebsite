@@ -188,11 +188,12 @@ export default function Home() {
                 <h2 id="team" className="font-display font-bold text-5xl lg:text-7xl text-center">{t("team.title")}</h2>
                 <DragSlider>
                     {
-                        team.map(({img, ...member}, i) => (
+                        team.map(({img, roles, ...member}, i) => (
                             <TeamMember
                                 key={i}
                                 buttonText={t("team.contact")}
                                 img={localisePath(img)}
+                                role={roles.map(role => t(`team.roles.${role}`)).join(', ')}
                                 {...member}
                             />
                         ))

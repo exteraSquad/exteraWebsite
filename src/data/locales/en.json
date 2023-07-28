@@ -67,7 +67,19 @@
     },
     "team": {
       "title": "Our Team",
-      "contact": "Contact"
+      "contact": "Contact",
+      "roles": {
+        "ceo": "CEO",
+        "leadDev": "Lead Dev",
+        "dev": "Developer",
+        "leadDesigner": "Lead Designer",
+        "designer": "Designer",
+        "founder": "Founder",
+        "web": "Web Dev",
+        "python": "Python Dev",
+        "themer": "Themer",
+        "moe": "MoegramX Dev"
+      }
     },
     "download": {
       "title": "Join our lovely family",

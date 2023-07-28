@@ -2,43 +2,49 @@
   {
     "href": "https://immat0x1.t.me",
     "name": "immat0x1",
-    "role": "CEO, Lead Dev",
+    "roles": ["ceo", "leadDev"],
     "img": "https://avatars.githubusercontent.com/u/73192010?v=4"
   },
   {
     "href": "https://TierOhneNation.t.me",
     "name": "R4IN80W",
-    "role": "Lead Designer",
+    "roles": ["leadDesigner"],
     "img": "/images/team/r4in80w.jpg"
   },
   {
     "href": "https://the8055u.t.me",
     "name": "8055",
-    "role": "Designer",
+    "roles": ["designer"],
     "img": "https://avatars.githubusercontent.com/u/94839871?v=4"
   },
   {
     "href": "https://otomir23.me",
     "name": "otomir23",
-    "role": "Web Dev",
+    "roles": ["web"],
     "img": "https://avatars.githubusercontent.com/u/21289906?v=4"
   },
   {
     "href": "https://marsutko.t.me",
     "name": "jplie",
-    "role": "MoegramX Dev",
+    "roles": ["moe"],
     "img": "https://avatars.githubusercontent.com/u/61517619?v=4"
+  },
+  {
+    "href": "https://itsv1eds.ru/",
+    "name": "itsv1eds",
+    "roles": ["founder"],
+    "img": "https://avatars.githubusercontent.com/u/83278286?v=4"
   },
   {
     "href": "https://reNightly.t.me",
     "name": "Nightly",
-    "role": "Python Dev, Themer",
+    "roles": ["python", "themer"],
     "img": "https://avatars.githubusercontent.com/u/113241279?v=4"
   },
   {
     "href": "https://undeffine.t.me",
     "name": "undeffine",
-    "role": "Python Dev",
+    "roles": ["python"],
     "img": "https://avatars.githubusercontent.com/u/45912610?v=4"
   }
 ]
