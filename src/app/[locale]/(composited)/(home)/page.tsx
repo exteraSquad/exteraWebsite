@@ -22,6 +22,7 @@ import {SquareArrowDown} from "solar-icon-set";
 import * as icons from "solar-icon-set";
 import {ComponentType} from "react";
 import {IconProps} from "solar-icon-set/dist/types";
+import Anchor from "@/app/[locale]/(composited)/_components/anchor";
 
 export default function Home() {
     const t = useTranslations('home');
@@ -55,11 +56,10 @@ export default function Home() {
                     }}
                 />
             </section>
-
+            <Anchor id="features" className="top-12 lg:-top-48" />
             <section
                 className="bg-black text-white justify-between flex lg:px-24 lg:py-36 lg:gap-4 mb-16 flex-col w-full-no-offset
                 lg:flex-row rounded-4xl lg:rounded-6xl lg:h-[28rem] mt-64 sm:p-12 sm:pt-16 gap-12 p-4 pt-12 mx-offset md:o-16"
-                id="features"
             >
                 <div className="flex flex-col gap-4 justify-center">
                     <h3 className="font-bold font-display text-5xl lg:text-6xl 2xl:text-8xl text-center lg:text-left">
@@ -107,10 +107,10 @@ export default function Home() {
                 />
             </section>
 
+            <Anchor id="more" />
             <section
                 className="flex justify-center items-center flex-col gap-24 mb-16 border-2 py-12 px-4 md:px-12 lg:p-20
                 border-neutral-100 rounded-4xl md:rounded-6xl bg-white md:o-16 o-4 mx-offset w-full-no-offset"
-                id="more"
             >
                 {moreFeatures.map(({img, id, note, icon}, i) => {
                     const Icon: ComponentType<IconProps> = icon.startsWith('@') && icons.hasOwnProperty(icon.slice(1)) ?
@@ -184,8 +184,9 @@ export default function Home() {
                 </Marquee>
             </div>
 
+            <Anchor id="team" />
             <section className="w-full flex justify-center items-center flex-col gap-16 mb-32">
-                <h2 id="team" className="font-display font-bold text-5xl lg:text-7xl text-center">{t("team.title")}</h2>
+                <h2 className="font-display font-bold text-5xl lg:text-7xl text-center">{t("team.title")}</h2>
                 <DragSlider>
                     {
                         team.map(({img, roles, ...member}, i) => (
@@ -201,7 +202,8 @@ export default function Home() {
                 </DragSlider>
             </section>
 
-            <section className="w-full flex justify-center items-center flex-col px-5 md:px-8 gap-8 md:gap-16" id="download">
+            <Anchor id="download" className="md:-top-48" />
+            <section className="w-full flex justify-center items-center flex-col px-5 md:px-8 gap-8 md:gap-16">
                 <h2 className="font-display font-bold text-5xl lg:text-7xl text-center">{t("download.title")}</h2>
                 <div className="flex flex-row flex-wrap gap-8 justify-center w-full">
                     {
