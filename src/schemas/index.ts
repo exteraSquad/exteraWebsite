@@ -1,1 +1,3 @@
-export const schemaTypes = []
+import example from "@/schemas/example";
+
+export const schemaTypes = [example]
