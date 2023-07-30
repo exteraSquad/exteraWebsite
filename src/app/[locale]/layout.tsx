@@ -61,7 +61,8 @@ export default function RootLayout(
 export async function generateMetadata(): Promise<Metadata> {
     const locale = getLocale();
     const t = await getTranslations('meta');
-    const canonicalUrl = process.env.CANONICAL_URL || "";
+    const canonicalUrl = process.env.CANONICAL_URL ||
+        process.env.NODE_ENV === "development" ? `http://localhost:${process.env.PORT || 3000}` : "";
 
     return {
         metadataBase: new URL(canonicalUrl),
