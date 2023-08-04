@@ -910,6 +910,13 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.2.0.tgz#8be36a1f66f3265389e90b5f9c9962146758f728"
   integrity sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==
 
+"@sanity-typed/types@^3.2.1":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/@sanity-typed/types/-/types-3.2.1.tgz#0bf59eaa35136a8d272ec6a56d4d21adc74443da"
+  integrity sha512-mPwACmdXaCZw0zIV6t9Suki8yidI7EKlu8auhlAFFQSRkcySYxWDzw8qgNJxKZ8hDiVHv3DVqkYVrNmdKZYMOg==
+  dependencies:
+    type-fest "2.19.0"
+
 "@sanity/asset-utils@^1.2.5":
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@sanity/asset-utils/-/asset-utils-1.3.0.tgz#6460cd993a2c24368a6308028f3bc57df91f131e"
@@ -6733,6 +6740,11 @@ type-check@^0.4.0, type-check@~0.4.0:
   integrity sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==
   dependencies:
     prelude-ls "^1.2.1"
+
+type-fest@2.19.0:
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-2.19.0.tgz#88068015bb33036a598b952e55e9311a60fd3a9b"
+  integrity sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==
 
 type-fest@^0.20.2:
   version "0.20.2"

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@portabletext/react": "^3.0.4",
+    "@sanity-typed/types": "^3.2.1",
     "@sanity/client": "^6.2.0",
     "@sanity/document-internationalization": "^2.0.1",
     "@sanity/icons": "^2.4.1",
