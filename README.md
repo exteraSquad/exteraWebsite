@@ -14,6 +14,12 @@ To run the project locally, you need to install the dependencies first:
 yarn
 ```
 
+Then configure `.env` using `.env.example` as an example and run
+
+```bash
+yarn sanity:prepare
+```
+
 Then, you can run the development server:
 
 ```bash
