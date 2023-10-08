@@ -69,8 +69,8 @@ export default function Footer() {
                 </div>
                 <div className="hover:font-semibold transition-all flex gap-1">
                     {t('credits.dev') + ' '}
-                    <Link href="https://otomir23.me" className="text-primary-500" underline>
-                        otomir23
+                    <Link href="about:blank" className="text-primary-500" underline>
+                        -
                     </Link>
                 </div>
             </div>
