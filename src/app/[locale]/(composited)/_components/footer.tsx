@@ -63,14 +63,14 @@ export default function Footer() {
             <div className="flex flex-col lg:flex-row w-full justify-center items-center gap-2 lg:gap-8 text-neutral-800">
                 <div className="hover:font-semibold transition-all flex gap-1">
                     {t('credits.design') + ' '}
-                    <Link href="https://t.me/r4in80w8i0" className="text-primary-500" underline>
-                        tierohnenation
+                    <Link href="https://t.me/Design480" className="text-primary-500" underline>
+                        480 Design
                     </Link>
                 </div>
                 <div className="hover:font-semibold transition-all flex gap-1">
                     {t('credits.dev') + ' '}
-                    <Link href="about:blank" className="text-primary-500" underline>
-                        -
+                    <Link href="https://github.com/exteraSquad" className="text-primary-500" underline>
+                        exteraSquad
                     </Link>
                 </div>
             </div>

@@ -6,15 +6,9 @@
     "img": "https://avatars.githubusercontent.com/u/73192010?v=4"
   },
   {
-    "href": "https://TierOhneNation.t.me",
-    "name": "R4IN80W",
-    "roles": ["leadDesigner"],
-    "img": "/images/team/r4in80w.jpg"
-  },
-  {
     "href": "https://the8055u.t.me",
     "name": "8055",
-    "roles": ["designer"],
+    "roles": ["leadDesigner"],
     "img": "https://avatars.githubusercontent.com/u/94839871?v=4"
   },
   {
@@ -28,6 +22,12 @@
     "name": "itsv1eds",
     "roles": ["founder"],
     "img": "https://avatars.githubusercontent.com/u/83278286?v=4"
+  },
+  {
+    "href": "https://TierOhneNation.t.me",
+    "name": "R4IN80W",
+    "roles": ["designer"],
+    "img": "/images/team/r4in80w.jpg"
   },
   {
     "href": "https://reNightly.t.me",
