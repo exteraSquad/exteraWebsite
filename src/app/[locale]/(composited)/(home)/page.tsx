@@ -23,6 +23,7 @@ import * as icons from "solar-icon-set";
 import {ComponentType} from "react";
 import {IconProps} from "solar-icon-set/dist/types";
 import Anchor from "@/app/[locale]/(composited)/_components/anchor";
+import ExampleDataRenderer from "@/app/[locale]/(composited)/(home)/_components/example";
 
 export default function Home() {
     const t = useTranslations('home');
@@ -219,6 +220,9 @@ export default function Home() {
                     }
                 </div>
             </section>
+
+            {/* @ts-expect-error Async React Component */}
+            <ExampleDataRenderer />
         </>
     )
 }
